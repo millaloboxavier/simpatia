@@ -40,7 +40,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
       });
       setLoading(false);
       if (error) {
-        setError(error.message === "User already registered" ? "Este e-mail já tem conta." : "Não foi possível criar a conta.");
+        setError(error.message === "User already registered" ? "Este e-mail já tem conta." : `Não foi possível criar a conta: ${error.message}`);
         return;
       }
       setInfo("Quase lá! Confira seu e-mail para confirmar a conta.");
