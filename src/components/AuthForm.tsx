@@ -40,10 +40,10 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
       });
       setLoading(false);
       if (error) {
-        setError(error.message === "User already registered" ? "Este e-mail já tem conta." : `Não foi possível criar a conta: ${error.message}`);
+        setError(error.message === "User already registered" ? "Este e-mail já tem conta." : "Não foi possível criar a conta. Tente novamente em instantes.");
         return;
       }
-      setInfo("Quase lá! Confira seu e-mail para confirmar a conta.");
+      setInfo(`Enviamos um e-mail de confirmação para ${email}. Abra sua caixa de entrada e clique no link para ativar sua conta.`);
     }
   }
 
