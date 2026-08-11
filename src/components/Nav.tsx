@@ -28,35 +28,26 @@ export default function Nav() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="nav">
+    <header className="nav nav-v2">
       <div className="nav-inner">
-        <Link href="/" className="logo" style={{ textDecoration: "none" }}>
-          <div className="logo-mark">
-            <span>S</span>
-          </div>
-          <div className="logo-text">
-            Simpat<em>IA</em>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <div className="logo-text-v2">
+            Simpat<em>ia</em>
           </div>
         </Link>
         <nav className="links">
-          <Link href="/" className={`navbtn ${isActive("/") ? "active" : ""}`}>
-            Início
-          </Link>
-          <Link href="/congelador" className={`navbtn ${isActive("/congelador") ? "active" : ""}`}>
-            Congelador
-          </Link>
-          <Link href="/painel" className={`navbtn ${isActive("/painel") ? "active" : ""}`}>
-            Minhas simpatias
-          </Link>
-          <Link href="/blog" className={`navbtn ${isActive("/blog") ? "active" : ""}`}>
+          <Link href="/blog" className={`navbtn-v2 ${isActive("/blog") ? "active" : ""}`}>
             Blog
           </Link>
+          <Link href="/painel" className={`navbtn-v2 ${isActive("/painel") ? "active" : ""}`}>
+            Minhas simpatias
+          </Link>
           {email ? (
-            <button onClick={handleLogout} className="navbtn" title={email}>
+            <button onClick={handleLogout} className="navbtn-v2" title={email}>
               Sair
             </button>
           ) : (
-            <Link href="/login" className={`navbtn ${isActive("/login") ? "active" : ""}`}>
+            <Link href="/login" className="navbtn-v2 cta">
               Entrar
             </Link>
           )}

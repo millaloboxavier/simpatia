@@ -1,84 +1,116 @@
 import Link from "next/link";
+import { posts } from "@/lib/posts";
 
 export default function Home() {
+  const featuredPosts = posts.slice(0, 3);
+
   return (
-    <div className="view">
-      <section className="hero">
-        <div className="hero-grid">
+    <div className="view home-v2">
+      <section className="hero-v2">
+        <div className="hero-v2-grid">
           <div>
-            <div className="eyebrow">Simpatias, do jeito de hoje</div>
+            <div className="eyebrow-v2">✦ O que você quer pedir pro Universo?</div>
             <h1>
-              Congela o que <span className="hand">pesa</span>,<br />
-              descongela quando <span className="hand">passar</span>.
+              <em>Magia</em> virtual para os <em>dramas</em> da vida real
             </h1>
-            <p className="lead">
-              SimpatIA é onde suas simpatias ganham forma, acompanhamento e um fechamento de
-              verdade. Escreva o que quer resolver, guarde no congelador virtual e veja os dias
-              passarem — até o dia de comemorar.
+            <p className="lead-v2">
+              Simpatias online para aqueles momentos em que uma ajudinha do Universo cairia bem.
             </p>
-            <div className="hero-ctas">
-              <Link href="/congelador" className="btn btn-primary">
-                Abrir meu congelador 🧊
-              </Link>
-              <Link href="/painel" className="btn btn-ghost">
-                Ver minhas simpatias
+            <div className="hero-v2-ctas">
+              <Link href="#vitrine" className="btn-v2">
+                Pedir ajuda ao Universo →
               </Link>
             </div>
           </div>
-          <div className="hero-visual">
-            <div className="mini-freezer">
-              <div className="mini-handle"></div>
-              <div className="mini-note">
-                aquele desafeto que some da minha vida<span className="mini-days">12 dias</span>
+          <div>
+            <div className="jar-card">
+              <div className="jar-emoji">🫙</div>
+              <div className="jar-note">
+                Nome da Crush <span className="check">✓</span>
               </div>
-              <div className="mini-note">
-                ansiedade antes da entrevista<span className="mini-days">3 dias</span>
+              <div className="jar-note">
+                Pedido recebido <span className="check">✓</span>
               </div>
-              <div className="mini-note">
-                fofoca no trabalho<span className="mini-days">27 dias</span>
+              <div className="jar-progress">
+                <div></div>
               </div>
+              <div className="jar-status">FEITO. Entregue ao Universo ✓</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="showcase">
-        <div className="eyebrow">Vitrine</div>
-        <h2>Escolha sua simpatia</h2>
-        <p className="showcase-sub">
-          Cada simpatia tem seu próprio ritual. Por enquanto, a Simpatia do Congelador está
-          pronta pra usar — as outras estão sendo preparadas com o mesmo carinho.
-        </p>
-
-        <div className="cards">
-          <Link href="/congelador" className="card freezer-card clickable">
-            <span className="badge live">Disponível</span>
-            <div className="icon">🧊</div>
-            <h3>Simpatia do Congelador</h3>
-            <p>
-              Escreva o que quer congelar num post-it, guarde na geladeira virtual e acompanhe
-              quantos dias já se passaram. Quando resolver, descongele e comemore.
-            </p>
-          </Link>
-          <div className="card soon">
-            <span className="badge soon">Em breve</span>
-            <div className="icon">🕯️</div>
-            <h3>Vela do Amor</h3>
-            <p>Acenda uma vela virtual por alguém especial e acompanhe a chama queimar em tempo real.</p>
-          </div>
-          <div className="card soon">
-            <span className="badge soon">Em breve</span>
-            <div className="icon">🫙</div>
-            <h3>Jarro da Prosperidade</h3>
-            <p>Junte moedinhas simbólicas todos os dias e veja o jarro encher enquanto sua intenção cresce.</p>
-          </div>
-          <div className="card soon">
-            <span className="badge soon">Em breve</span>
-            <div className="icon">🎗️</div>
-            <h3>Fita do Bonfim</h3>
-            <p>Amarre um pedido numa fita virtual com três nós — um por desejo — e acompanhe até ela se soltar.</p>
+      <section className="helper-block">
+        <div className="eyebrow-v2">✦ Como funciona</div>
+        <h2>Uma ajudinha nunca é demais</h2>
+        <p className="lead-v2">Aqui você não vem só ler uma simpatia. Você faz.</p>
+        <div className="helper-grid">
+          <div className="helper-steps">Escreve. Arrasta. Acende. Sopra.</div>
+          <div className="helper-note">
+            <b>Cada simpatia é um ritual</b>
+            Porque aparentemente agora até o Universo recebe pedido online.
           </div>
         </div>
+      </section>
+
+      <section className="showcase-v2" id="vitrine">
+        <h2>Escolha sua simpatia</h2>
+        <p className="lead-v2">
+          Crush não responde? Reunião marcada sexta às 17h? Dinheiro evaporando antes do fim do
+          mês?
+        </p>
+        <div className="eyebrow-v2">✦ Tem uma simpatia pra isso</div>
+
+        <div className="simpatia-cards">
+          <Link href="/simpatias/conquistar" className="simpatia-card card-lavender">
+            <span className="tag-v2">Conquistar</span>
+            <div className="icon-v2">🍯</div>
+            <h3>Quero conquistar o crush</h3>
+            <p>Simpatia do mel e pimenta, para fazer o crush se apaixonar.</p>
+            <span className="go-v2">Quero conquistar →</span>
+          </Link>
+          <Link href="/simpatias/atrair" className="simpatia-card card-peach">
+            <span className="tag-v2">Atrair</span>
+            <div className="icon-v2">✨</div>
+            <h3>Quero atrair coisa boa</h3>
+            <p>Simpatia da canela para atrair dinheiro, oportunidades e abundância.</p>
+            <span className="go-v2">Quero atrair →</span>
+          </Link>
+          <Link href="/congelador" className="simpatia-card card-mint">
+            <span className="tag-v2">Afastar</span>
+            <div className="icon-v2">🧊</div>
+            <h3>Quero evitar que algo aconteça</h3>
+            <p>Simpatia do congelador para impedir ou afastar pessoa, situação ou acontecimento indesejado.</p>
+            <span className="go-v2">Quero congelar →</span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="blog-teaser">
+        <h2>A gente foi procurar uma simpatia. Voltou com um Blog.</h2>
+        <div className="blog-teaser-grid">
+          {featuredPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-teaser-card">
+              <h4>{post.title}</h4>
+              <p>{post.excerpt}</p>
+            </Link>
+          ))}
+        </div>
+        <div className="blog-teaser-cta">
+          <Link href="/blog" className="btn-v2">
+            Ir para o Blog →
+          </Link>
+        </div>
+      </section>
+
+      <section className="quote-block">
+        <div className="eyebrow-v2">✦ entre nós e o Universo</div>
+        <p>
+          A gente sabe. Pode ser coincidência. Talvez sua avó estivesse certa. Talvez colocar um
+          nome no congelador numa reunião não tenha nenhuma relação com aquela reunião ter sido
+          cancelada.
+        </p>
+        <p className="emphasis">Mas ela foi cancelada. A gente prefere não estragar a história.</p>
       </section>
     </div>
   );
