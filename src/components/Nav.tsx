@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { LOGO_URL } from "@/lib/brand";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -30,10 +31,9 @@ export default function Nav() {
   return (
     <header className="nav nav-v2">
       <div className="nav-inner">
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <div className="logo-text-v2">
-            Simpat<em>ia</em>
-          </div>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={LOGO_URL} alt="Simpatia" style={{ height: 34, width: "auto" }} />
         </Link>
         <nav className="links">
           <Link href="/blog" className={`navbtn-v2 ${isActive("/blog") ? "active" : ""}`}>

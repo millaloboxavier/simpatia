@@ -62,21 +62,21 @@ export default function Home() {
         <div className="eyebrow-v2">✦ Tem uma simpatia pra isso</div>
 
         <div className="simpatia-cards">
-          <Link href="/simpatias/conquistar" className="simpatia-card card-lavender">
+          <Link href="/simpatias/conquistar" className="simpatia-card card-lilas">
             <span className="tag-v2">Conquistar</span>
             <div className="icon-v2">🍯</div>
             <h3>Quero conquistar o crush</h3>
             <p>Simpatia do mel e pimenta, para fazer o crush se apaixonar.</p>
             <span className="go-v2">Quero conquistar →</span>
           </Link>
-          <Link href="/simpatias/atrair" className="simpatia-card card-peach">
+          <Link href="/simpatias/atrair" className="simpatia-card card-sorte">
             <span className="tag-v2">Atrair</span>
             <div className="icon-v2">✨</div>
             <h3>Quero atrair coisa boa</h3>
             <p>Simpatia da canela para atrair dinheiro, oportunidades e abundância.</p>
             <span className="go-v2">Quero atrair →</span>
           </Link>
-          <Link href="/congelador" className="simpatia-card card-mint">
+          <Link href="/congelador" className="simpatia-card card-azul">
             <span className="tag-v2">Afastar</span>
             <div className="icon-v2">🧊</div>
             <h3>Quero evitar que algo aconteça</h3>

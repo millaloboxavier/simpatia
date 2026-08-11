@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./simpatia.css";
 import Nav from "@/components/Nav";
 import Toaster from "@/components/Toaster";
+import { LOGO_URL } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "SimpatIA — congele o que precisa resolver",
@@ -26,7 +27,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="container" style={{ flex: 1 }}>
             {children}
           </main>
-          <footer>SimpatIA — feito com carinho por quem acredita nessas simpatias.</footer>
+          <footer>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={LOGO_URL}
+              alt="Simpatia"
+              style={{ height: 24, width: "auto", margin: "0 auto 10px", opacity: 0.8 }}
+            />
+            <div>Magia virtual para os dramas da vida real</div>
+          </footer>
         </div>
         <Toaster />
       </body>

@@ -11,24 +11,34 @@
   --postit-coral: #FFC2AD;
   --ember: #D9663D;
   --ember-dark: #B84E2B;
-  --ink: #14262A;
+  --ink: #0B1D19;
   --ink-soft: #4A6066;
   --paper: #FBF8F2;
   --line: rgba(15,46,54,0.12);
   --shadow: 0 10px 30px rgba(15,46,54,0.12);
   --radius: 18px;
 
-  /* ---- Marca v2 (redesign) ---- */
-  --cream: #F3EEE1;
-  --cream-2: #EAE2CE;
-  --green-deep: #1F3B2C;
-  --green-deep-2: #16301F;
-  --terracotta: #C7482E;
-  --terracotta-dark: #A63A24;
-  --lavender-card: #DCCFE6;
-  --peach-card: #F2CDA0;
-  --mint-card: #CFE0D9;
-  --ink-v2: #1C2A20;
+  /* ---- Marca v2 (redesign) — paleta oficial do Figma ---- */
+  --verde-feitico: #173F35;
+  --verde-ervas: #E2E1D4;
+  --creme-vela: #F9EFE7;
+  --branco-estrela: #FFFDF7;
+  --laranja-pimenta: #D95829;
+  --lilas-misterio: #E6D2D7;
+  --azul-intuicao: #DEE6E8;
+  --verde-sorte: #BCC69E;
+  --preto-universo: #0B1D19;
+
+  --cream: var(--creme-vela);
+  --cream-2: var(--verde-ervas);
+  --green-deep: var(--verde-feitico);
+  --green-deep-2: #0F2A22;
+  --terracotta: var(--laranja-pimenta);
+  --terracotta-dark: #B8471F;
+  --lavender-card: var(--lilas-misterio);
+  --peach-card: var(--verde-sorte);
+  --mint-card: var(--azul-intuicao);
+  --ink-v2: var(--preto-universo);
   --ink-v2-soft: #58635A;
 }
 *{box-sizing:border-box;}
@@ -569,9 +579,9 @@ header.nav.nav-v2{
   background:var(--green-deep); color:#fff; border-radius:100px; padding:11px 18px;
   font-weight:700; font-size:13.5px; display:inline-flex; align-items:center; gap:8px; width:fit-content;
 }
-.simpatia-card.card-lavender{ background:var(--lavender-card); }
-.simpatia-card.card-peach{ background:var(--peach-card); }
-.simpatia-card.card-mint{ background:var(--mint-card); }
+.simpatia-card.card-lilas{ background:var(--lilas-misterio); }
+.simpatia-card.card-sorte{ background:var(--verde-sorte); }
+.simpatia-card.card-azul{ background:var(--azul-intuicao); }
 
 .blog-teaser{ padding:20px 0 80px; }
 .blog-teaser h2{
