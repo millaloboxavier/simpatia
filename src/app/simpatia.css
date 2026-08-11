@@ -19,28 +19,41 @@
   --radius: 18px;
 
   /* ---- Marca v2 (redesign) — paleta oficial do Figma ---- */
+  /* Verdes */
   --verde-feitico: #173F35;
   --verde-ervas: #E2E1D4;
-  --creme-vela: #F9EFE7;
-  --branco-estrela: #FFFDF7;
-  --laranja-pimenta: #D95829;
-  --lilas-misterio: #E6D2D7;
-  --azul-intuicao: #DEE6E8;
   --verde-sorte: #BCC69E;
   --preto-universo: #0B1D19;
+  /* Cremes / neutros */
+  --creme-vela: #F9EFE7;
+  --branco-estrela: #FFFDF7;
   --creme-desejo: #F9D5C1;
+  --cinza-bruma: #616F6B;
+  /* Marrons */
+  --marrom-canela: #8D482F;
+  --marrom-terra: #45281E;
+  /* Roxos */
+  --roxo-penumbra: #311431;
+  --roxo-feitico: #6C2B6B;
+  --lilas-misterio: #CDA1CC;
+  --rosa-incenso: #E6D2D7;
+  /* Azuis */
+  --azul-abismo: #142B31;
+  --azul-mare: #307687;
+  --azul-sereno: #AFD5DE;
+  --azul-intuicao: #DEE6E8;
 
   --cream: var(--creme-vela);
   --cream-2: var(--verde-ervas);
   --green-deep: var(--verde-feitico);
-  --green-deep-2: #0F2A22;
-  --terracotta: var(--laranja-pimenta);
-  --terracotta-dark: #B8471F;
+  --green-deep-2: var(--preto-universo);
+  --terracotta: var(--roxo-feitico);
+  --terracotta-dark: var(--roxo-penumbra);
   --lavender-card: var(--lilas-misterio);
-  --peach-card: var(--verde-sorte);
+  --peach-card: var(--creme-desejo);
   --mint-card: var(--azul-intuicao);
   --ink-v2: var(--preto-universo);
-  --ink-v2-soft: #5B6966;
+  --ink-v2-soft: var(--cinza-bruma);
   --on-dark-heading: var(--creme-desejo);
   --on-dark-text: rgba(249,239,231,0.9);
 }
