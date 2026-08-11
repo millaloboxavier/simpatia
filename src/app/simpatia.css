@@ -513,8 +513,8 @@ header.nav.nav-v2{
 .hero-v2-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
 .hero-illustration{ width:100%; max-width:420px; height:auto; margin:0 auto; display:block; }
 .hero-illustration-title{
-  display:flex; align-items:center; gap:8px; justify-content:center;
-  color:#173f36; font-size:29px; font-weight:700; letter-spacing:0; margin-bottom:18px;
+  text-align:center;
+  color:#173f36; font-size:29px; font-weight:700; letter-spacing:0; line-height:1.15; margin-bottom:18px;
 }
 .hero-illustration-title em{ font-style:normal; color:var(--terracotta); }
 .hero-v2 h1{
