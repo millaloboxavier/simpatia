@@ -35,7 +35,7 @@
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  background:var(--frost-bg);
+  background:var(--cream);
   color:var(--ink);
   font-family:'Sora', sans-serif;
   -webkit-font-smoothing:antialiased;
