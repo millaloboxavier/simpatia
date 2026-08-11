@@ -92,6 +92,13 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
               placeholder="mínimo 6 caracteres"
             />
           </div>
+          {mode === "login" && (
+            <div style={{ textAlign: "right", marginBottom: 16, marginTop: -6 }}>
+              <Link href="/forgot-password" style={{ fontSize: 13.5, color: "var(--ink-soft)" }}>
+                Esqueceu sua senha?
+              </Link>
+            </div>
+          )}
           <button className="btn btn-primary" type="submit" disabled={loading}>
             {mode === "login" ? "Entrar" : "Criar conta"}
           </button>
