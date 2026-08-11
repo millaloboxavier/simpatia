@@ -511,7 +511,10 @@ header.nav.nav-v2{
   font-family:'Fraunces', serif; font-weight:600; font-size:clamp(32px,4.4vw,50px);
   line-height:1.08; color:var(--ink-v2); max-width:600px;
 }
-.hero-v2 h1 em{ font-style:italic; color:var(--terracotta); font-weight:600; }
+.hero-v2 h1 em{
+  font-family:'Caveat', cursive; font-style:normal; color:var(--terracotta); font-weight:700;
+  font-size:1.2em; line-height:1;
+}
 .hero-v2 p.lead-v2{
   margin-top:18px; font-size:16.5px; line-height:1.6; color:var(--ink-v2-soft); max-width:460px;
 }
