@@ -9,7 +9,6 @@ export default function Home() {
       <section className="hero-v2">
         <div className="hero-v2-grid">
           <div>
-            <div className="eyebrow-v2">✦ O que você quer pedir pro Universo?</div>
             <h1>
               <em>Magia</em> virtual para os <em>dramas</em> da vida real
             </h1>
@@ -23,19 +22,15 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="jar-card">
-              <div className="jar-emoji">🫙</div>
-              <div className="jar-note">
-                Nome da Crush <span className="check">✓</span>
-              </div>
-              <div className="jar-note">
-                Pedido recebido <span className="check">✓</span>
-              </div>
-              <div className="jar-progress">
-                <div></div>
-              </div>
-              <div className="jar-status">FEITO. Entregue ao Universo ✓</div>
+            <div className="eyebrow-v2 hero-illustration-caption">
+              ✦ O que você quer jogar pro <em>Universo</em>?
             </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/img%20Header.png"
+              alt="Pote de vidro com pimenta e post-its representando um pedido enviado ao Universo"
+              className="hero-illustration"
+            />
           </div>
         </div>
       </section>
