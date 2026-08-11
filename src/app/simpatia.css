@@ -575,13 +575,13 @@ header.nav.nav-v2{
 }
 .helper-block .eyebrow-v2{ color:var(--on-dark-text); }
 .helper-block h2{
-  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(24px,3vw,32px); max-width:420px;
+  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(24px,3vw,32px);
   color:var(--on-dark-heading);
 }
 .helper-block h2 em{
   font-family:'Caveat', cursive; font-style:normal; font-weight:700; font-size:1.15em;
 }
-.helper-block p.lead-v2{ color:var(--on-dark-text); max-width:420px; margin-top:14px; }
+.helper-block p.lead-v2{ color:var(--on-dark-text); margin-top:14px; }
 .helper-block p.lead-v2 b{ color:var(--on-dark-heading); font-weight:700; }
 
 .helper-steps-list{ display:flex; flex-direction:row; gap:32px; margin-top:36px; }
