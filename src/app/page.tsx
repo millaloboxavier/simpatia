@@ -10,14 +10,14 @@ export default function Home() {
         <div className="hero-v2-grid">
           <div>
             <h1>
-              <em>Magia</em> virtual para os <em>dramas</em> da vida real
+              Simpatia virtual para os <em>dramas</em> da vida real
             </h1>
             <p className="lead-v2">
-              Simpatias online para aqueles momentos em que uma ajudinha do Universo cairia bem.
+              Magias online para aqueles momentos em que uma ajudinha do Universo cairia bem.
             </p>
             <div className="hero-v2-ctas">
               <Link href="#vitrine" className="btn-v2">
-                Pedir ajuda ao Universo →
+                Fazer uma Simpatia →
               </Link>
             </div>
           </div>
