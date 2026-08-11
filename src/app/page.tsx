@@ -37,13 +37,33 @@ export default function Home() {
 
       <section className="helper-block">
         <div className="eyebrow-v2">✦ Como funciona</div>
-        <h2>Uma ajudinha nunca é demais</h2>
-        <p className="lead-v2">Aqui você não vem só ler uma simpatia. Você faz.</p>
-        <div className="helper-grid">
-          <div className="helper-steps">Escreve. Arrasta. Acende. Sopra.</div>
-          <div className="helper-note">
-            <b>Cada simpatia é um ritual</b>
-            Porque aparentemente agora até o Universo recebe pedido online.
+        <h2>
+          Uma <em>ajudinha</em> nunca é demais
+        </h2>
+        <p className="lead-v2">
+          Aqui você não vem só ler uma simpatia. <b>Você faz.</b>
+        </p>
+        <div className="helper-steps-list">
+          <div className="helper-step">
+            <div className="helper-step-icon">📝</div>
+            <div>
+              <h4>Escolhe a Simpatia</h4>
+              <p>atrair, conquistar, afastar, ou o drama da vez.</p>
+            </div>
+          </div>
+          <div className="helper-step">
+            <div className="helper-step-icon">🕯️</div>
+            <div>
+              <h4>Faz o Ritual Virtual</h4>
+              <p>escreve. congela. acende. sopra...</p>
+            </div>
+          </div>
+          <div className="helper-step">
+            <div className="helper-step-icon">👁️</div>
+            <div>
+              <h4>Envia para o Universo</h4>
+              <p>agora até ele recebe pedido online.</p>
+            </div>
           </div>
         </div>
       </section>
