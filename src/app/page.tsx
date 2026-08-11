@@ -22,7 +22,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="eyebrow-v2 hero-illustration-caption">
+            <div className="hero-illustration-title">
               ✦ O que você quer jogar pro <em>Universo</em>?
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
