@@ -16,7 +16,6 @@ type Pedido = {
   finalized_at: string | null;
 };
 
-const DAY_MS = 24 * 60 * 60 * 1000;
 const COLORS = ["color-amber", "color-mint", "color-coral"];
 
 function daysFrozen(p: Pedido) {
@@ -117,27 +116,6 @@ export default function CongeladorPage() {
     setCelebrate({ text: updated.text, days: daysFrozen(updated) });
   }
 
-  async function advanceDay() {
-    if (ativos.length === 0) {
-      showToast("Nenhum pedido ativo pra congelar ainda.");
-      return;
-    }
-    const updates = ativos.map((p) => ({
-      id: p.id,
-      created_at: new Date(new Date(p.created_at).getTime() - DAY_MS).toISOString(),
-    }));
-    for (const u of updates) {
-      await supabase.from("pedidos").update({ created_at: u.created_at }).eq("id", u.id);
-    }
-    setPedidos((prev) =>
-      prev.map((p) => {
-        const u = updates.find((x) => x.id === p.id);
-        return u ? { ...p, created_at: u.created_at } : p;
-      })
-    );
-    showToast("Mais um dia passou no congelador ❄️");
-  }
-
   function shareMessage(text: string, days: number) {
     return `Descongelei uma simpatia no SimpatIA: "${text}" — resolvido depois de ${days} dia${days === 1 ? "" : "s"}! 🎉`;
   }
@@ -165,6 +143,17 @@ export default function CongeladorPage() {
           </Link>
         </div>
       )}
+
+      <div className="freezer-stats-row">
+        <div className="stat-card-compact">
+          <div className="num">{ativos.length}</div>
+          <div className="lbl">pedidos congelados agora</div>
+        </div>
+        <div className="stat-card-compact">
+          <div className="num">{finalizados.length}</div>
+          <div className="lbl">simpatias já descongeladas</div>
+        </div>
+      </div>
 
       <div className="freezer-layout">
         <div className="freezer-unit">
@@ -216,37 +205,6 @@ export default function CongeladorPage() {
 
           <div className="freezer-foot">
             <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>
-          </div>
-        </div>
-
-        <div className="side-panel">
-          <div className="stat-card">
-            <div className="num">{ativos.length}</div>
-            <div className="lbl">pedidos congelados agora</div>
-          </div>
-          <div className="stat-card">
-            <div className="num">{finalizados.length}</div>
-            <div className="lbl">simpatias já descongeladas</div>
-          </div>
-          <div className="demo-dial">
-            <div className="dial-label">Modo demonstração</div>
-            <div
-              className="dial-knob"
-              role="button"
-              tabIndex={0}
-              aria-label="Avançar um dia, para fins de demonstração"
-              onClick={advanceDay}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  advanceDay();
-                }
-              }}
-            ></div>
-            <div className="dial-note">
-              Toque para simular a passagem de 1 dia e ver o gelo se formar. Na versão real, isso
-              acontece sozinho, dia após dia.
-            </div>
           </div>
         </div>
       </div>

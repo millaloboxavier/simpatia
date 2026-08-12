@@ -220,9 +220,18 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .freezer-header p{color:var(--ink-soft); margin-top:10px; max-width:560px; font-size:15.5px; line-height:1.6;}
 
 .freezer-layout{
-  padding:34px 0 100px;
-  display:grid; grid-template-columns:1fr 220px; gap:34px; align-items:start;
+  padding:0 0 100px;
 }
+.freezer-stats-row{
+  display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;
+}
+.stat-card-compact{
+  flex:1; min-width:180px; background:var(--paper); border-radius:14px; padding:12px 18px;
+  box-shadow:var(--shadow); border:1px solid var(--line);
+  display:flex; align-items:baseline; gap:10px;
+}
+.stat-card-compact .num{font-family:'Fraunces',serif; font-size:22px; font-weight:600; color:var(--deep-teal);}
+.stat-card-compact .lbl{font-size:12.5px; color:var(--ink-soft); font-weight:600;}
 
 .freezer-unit{
   background:linear-gradient(165deg, var(--deep-teal-2) 0%, var(--deep-teal) 75%);
@@ -297,32 +306,6 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   display:flex; justify-content:space-between; align-items:center; margin-top:6px; position:relative; z-index:2;
 }
 .freezer-foot .hint{color:rgba(255,255,255,0.5); font-size:12.5px;}
-
-/* side control column */
-.side-panel{position:sticky; top:96px; display:flex; flex-direction:column; gap:18px;}
-.stat-card{
-  background:var(--paper); border-radius:16px; padding:18px 20px; box-shadow:var(--shadow); border:1px solid var(--line);
-}
-.stat-card .num{font-family:'Fraunces',serif; font-size:30px; font-weight:600; color:var(--deep-teal);}
-.stat-card .lbl{font-size:12.5px; color:var(--ink-soft); font-weight:600; margin-top:2px;}
-
-.demo-dial{
-  background:var(--deep-teal); border-radius:16px; padding:20px; color:#fff; text-align:center;
-}
-.demo-dial .dial-label{font-size:11.5px; text-transform:uppercase; letter-spacing:0.07em; color:var(--ice-blue-soft); font-weight:700;}
-.dial-knob{
-  width:74px; height:74px; border-radius:50%; margin:14px auto;
-  background:radial-gradient(circle at 35% 30%, #3a5c66, var(--deep-teal-2) 60%, #071a1f);
-  box-shadow:0 0 0 4px rgba(169,216,211,0.15), inset 0 0 10px rgba(0,0,0,0.5);
-  position:relative; cursor:pointer; transition:transform 0.15s ease;
-  display:flex; align-items:center; justify-content:center;
-}
-.dial-knob:hover{transform:rotate(18deg);}
-.dial-knob::before{
-  content:""; width:3px; height:26px; background:var(--ice-blue); border-radius:3px;
-  position:absolute; top:8px; left:50%; transform:translateX(-50%);
-}
-.demo-dial .dial-note{font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5; margin-top:6px;}
 
 /* ---------- Painel / Minhas Simpatias ---------- */
 .panel-header{padding:56px 0 24px;}
@@ -479,9 +462,7 @@ footer{
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;}
   .hero-visual{order:-1; margin-bottom:10px;}
-  .freezer-layout{grid-template-columns:1fr;}
-  .side-panel{position:static; flex-direction:row; flex-wrap:wrap;}
-  .side-panel > *{flex:1; min-width:150px;}
+  .freezer-stats-row{flex-direction:column;}
   nav.links button span.full{display:none;}
 }
 @media (max-width:560px){
