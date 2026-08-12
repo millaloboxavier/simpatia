@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { showToast } from "@/lib/toast";
+import { daysFrozen as computeDaysFrozen } from "@/lib/pedidos";
 
 type Pedido = {
   id: string;
@@ -19,8 +20,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const COLORS = ["color-amber", "color-mint", "color-coral"];
 
 function daysFrozen(p: Pedido) {
-  const end = p.status === "finalizado" && p.finalized_at ? new Date(p.finalized_at).getTime() : Date.now();
-  return Math.max(0, Math.floor((end - new Date(p.created_at).getTime()) / DAY_MS));
+  return computeDaysFrozen(p.created_at, p.finalized_at, p.status);
 }
 
 function frostOpacity(days: number) {
