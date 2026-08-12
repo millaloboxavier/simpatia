@@ -203,7 +203,7 @@ export default function CongeladorPage() {
                     onClick={() => setDetailId(p.id)}
                   >
                     <div className="pin"></div>
-                    <div className="frost-overlay" style={{ "--frost": frostOpacity(days) } as React.CSSProperties}></div>
+                    <div className="frost-overlay" style={{ opacity: frostOpacity(days) }}></div>
                     <div className="txt">{p.text}</div>
                     <div className="days-tag">
                       {days} dia{days === 1 ? "" : "s"}
