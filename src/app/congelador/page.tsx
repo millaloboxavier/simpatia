@@ -25,7 +25,7 @@ function daysFrozen(p: Pedido) {
 
 function frostOpacity(days: number) {
   if (days <= 0) return 0;
-  return Math.min(0.62, 0.15 + days * 0.035);
+  return Math.min(0.95, 0.55 + days * 0.03);
 }
 
 export default function CongeladorPage() {
@@ -203,8 +203,7 @@ export default function CongeladorPage() {
                     onClick={() => setDetailId(p.id)}
                   >
                     <div className="pin"></div>
-                    <div className="frost-overlay" style={{ opacity: 0.6 }}></div>
-                    {/* DIAGNÓSTICO TEMPORÁRIO: opacity fixa em 0.6 pra testar se o overlay aparece */}
+                    <div className="frost-overlay" style={{ opacity: frostOpacity(days) }}></div>
                     <div className="txt">{p.text}</div>
                     <div className="days-tag">
                       {days} dia{days === 1 ? "" : "s"}
