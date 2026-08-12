@@ -24,7 +24,8 @@ function daysFrozen(p: Pedido) {
 }
 
 function frostOpacity(days: number) {
-  return Math.min(0.62, days * 0.045);
+  if (days <= 0) return 0;
+  return Math.min(0.62, 0.15 + days * 0.035);
 }
 
 export default function CongeladorPage() {
