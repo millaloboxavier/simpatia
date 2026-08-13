@@ -74,7 +74,9 @@ export default function Home() {
           Crush não responde? Reunião marcada sexta às 17h? Dinheiro evaporando antes do fim do
           mês?
         </p>
-        <div className="eyebrow-v2">✦ Tem uma simpatia pra isso</div>
+        <div className="eyebrow-v2">
+          ✦ Tem uma <em>simpatia</em> pra isso
+        </div>
 
         <div className="simpatia-cards">
           <Link href="/simpatias/conquistar" className="simpatia-card card-lilas">

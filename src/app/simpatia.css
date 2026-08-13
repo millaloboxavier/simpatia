@@ -588,9 +588,10 @@ header.nav.nav-v2{
 }
 .showcase-v2 p.lead-v2{ color:var(--ink-v2-soft); margin-top:10px; max-width:480px; }
 .showcase-v2 .eyebrow-v2{
-  margin-top:20px; color:var(--terracotta); font-family:'Caveat', cursive; font-weight:700;
+  margin-top:20px; color:var(--verde-feitico); font-family:'Caveat', cursive; font-weight:700;
   font-size:26px; text-transform:none; letter-spacing:0;
 }
+.showcase-v2 .eyebrow-v2 em{ font-style:normal; color:var(--terracotta); }
 
 .simpatia-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; margin-top:24px; }
 .simpatia-card{
