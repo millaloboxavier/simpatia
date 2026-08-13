@@ -144,19 +144,9 @@ export default function CongeladorPage() {
         </div>
       )}
 
-      <div className="freezer-stats-row">
-        <div className="stat-card-compact">
-          <div className="num">{ativos.length}</div>
-          <div className="lbl">pedidos congelados agora</div>
-        </div>
-        <div className="stat-card-compact">
-          <div className="num">{finalizados.length}</div>
-          <div className="lbl">simpatias já descongeladas</div>
-        </div>
-      </div>
-
       <div className="freezer-layout">
         <div className="freezer-unit">
+          <div className="freezer-handle"></div>
           <div className="freezer-top">
             <div className="label">🧊 Congelador — ativos</div>
             <button
@@ -206,6 +196,17 @@ export default function CongeladorPage() {
           <div className="freezer-foot">
             <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>
           </div>
+        </div>
+      </div>
+
+      <div className="freezer-stats-row">
+        <div className="stat-card-compact">
+          <div className="num">{ativos.length}</div>
+          <div className="lbl">pedidos congelados agora</div>
+        </div>
+        <div className="stat-card-compact">
+          <div className="num">{finalizados.length}</div>
+          <div className="lbl">simpatias já descongeladas</div>
         </div>
       </div>
 
