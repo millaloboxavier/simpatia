@@ -43,9 +43,14 @@ export default function Nav() {
             Minhas simpatias
           </Link>
           {email ? (
-            <button onClick={handleLogout} className="navbtn-v2" title={email}>
-              Sair
-            </button>
+            <>
+              <Link href="/conta" className={`navbtn-v2 ${isActive("/conta") ? "active" : ""}`} title={email}>
+                Minha conta
+              </Link>
+              <button onClick={handleLogout} className="navbtn-v2">
+                Sair
+              </button>
+            </>
           ) : (
             <Link href="/login" className="navbtn-v2 cta">
               Entrar

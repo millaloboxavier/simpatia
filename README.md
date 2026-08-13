@@ -28,9 +28,14 @@ antes. Siga na ordem.
 
 ### 1.2. Pegar as chaves de API
 
-1. No menu lateral, vá em **Project Settings** (ícone de engrenagem) → **Data API**.
-2. Copie a **Project URL** e a chave **anon public** (em **API Keys**). Você vai usar isso no
-   passo 3.
+1. No menu lateral, vá em **Project Settings** (ícone de engrenagem) → **Data API** ou **API
+   Keys**.
+2. Copie a **Project URL** e a chave **`anon` `public`** (ou a nova `publishable`). Você vai usar
+   isso no passo 3.
+3. Copie também a chave **`service_role`** (nessa mesma tela, ou em **API Keys**). Ela é
+   **secreta** — nunca cole ela em código, só nas variáveis de ambiente da Vercel. É usada só
+   para permitir que a própria usuária exclua a própria conta (funcionalidade em **Minha
+   conta**).
 
 ### 1.3. Ativar login com Google e Facebook (opcional, mas recomendado)
 
@@ -59,12 +64,12 @@ npm install
 cp .env.local.example .env.local
 ```
 
-Abra o `.env.local` criado e cole a **Project URL** e a **anon public key** que você pegou no
-passo 1.2:
+Abra o `.env.local` criado e cole as chaves que você pegou no passo 1.2:
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-anon-key-aqui
+SUPABASE_SERVICE_ROLE_KEY=sua-service-role-key-aqui
 ```
 
 Depois:
@@ -83,10 +88,12 @@ simpatias".
 
 1. Suba este projeto para um repositório no GitHub (se ainda não estiver lá).
 2. Acesse [vercel.com/new](https://vercel.com/new) e importe o repositório.
-3. Na tela de configuração do projeto, abra **Environment Variables** e adicione as mesmas duas
+3. Na tela de configuração do projeto, abra **Environment Variables** e adicione as mesmas
    variáveis do `.env.local`:
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` (essa é secreta — a Vercel já trata variáveis de ambiente como
+     privadas, então está segura ali; só não a coloque em nenhum outro lugar público)
 4. Clique em **Deploy**. Em ~1 minuto o site estará no ar num endereço tipo
    `https://simpatia.vercel.app`.
 

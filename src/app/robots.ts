@@ -6,7 +6,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/painel", "/login", "/signup", "/forgot-password", "/reset-password", "/auth/"],
+        disallow: [
+          "/painel",
+          "/conta",
+          "/login",
+          "/signup",
+          "/forgot-password",
+          "/reset-password",
+          "/auth/",
+          "/api/",
+        ],
       },
     ],
     sitemap: "https://simpatia.me/sitemap.xml",
