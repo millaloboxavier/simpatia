@@ -489,6 +489,8 @@ footer{
   nav.links button, nav.links a.navbtn{padding:8px 11px; font-size:13px;}
   .nav-v2 nav.links a.navbtn-v2, .nav-v2 nav.links button.navbtn-v2{padding:7px 10px; font-size:11.5px;}
   .note{width:44%;}
+  .nav-inner{flex-direction:column; align-items:center;}
+  .nav-v2 nav.links{justify-content:center; width:100%;}
 }
 
 :focus-visible{outline:2px solid var(--deep-teal); outline-offset:2px;}
@@ -499,7 +501,7 @@ footer{
 
 header.nav.nav-v2{
   background:var(--cream);
-  border-bottom:1px solid rgba(28,42,32,0.1);
+  border-bottom:1px solid var(--verde-ervas);
 }
 .nav-v2 .logo-text-v2{
   font-family:'Fraunces', serif; font-weight:700; font-size:21px; color:var(--ink-v2);

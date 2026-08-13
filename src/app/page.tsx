@@ -59,7 +59,7 @@ export default function Home() {
             </div>
           </div>
           <div className="helper-step">
-            <div className="helper-step-icon">👁️</div>
+            <div className="helper-step-icon">🌌</div>
             <div>
               <h4>Envia para o Universo</h4>
               <p>agora até ele recebe pedido online.</p>
