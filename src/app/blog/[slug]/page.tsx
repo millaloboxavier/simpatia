@@ -1,36 +1,38 @@
 import { notFound } from "next/navigation";
-import { getPost, posts } from "@/lib/posts";
+import DOMPurify from "isomorphic-dompurify";
+import { createClient } from "@/lib/supabase/server";
+import type { Post } from "@/lib/blog";
 
-export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+async function getPost(slug: string) {
+  const supabase = await createClient();
+  const { data } = await supabase.from("posts").select("*").eq("slug", slug).eq("published", true).maybeSingle();
+  return data as Post | null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
-  return { title: `${post.title} — Simpatia`, description: post.excerpt };
+  return {
+    title: post.seo_title || `${post.title} — Simpatia`,
+    description: post.seo_description || post.excerpt,
+  };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
+
+  const safeContent = DOMPurify.sanitize(post.content);
 
   return (
     <div className="view blog-post">
-      <div className="blog-eyebrow" style={{ marginBottom: 10 }}>
-        {post.eyebrow}
-      </div>
       <h1>{post.title}</h1>
       <div className="blog-meta">
-        {new Date(post.date).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}
+        {new Date(post.created_at).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}
       </div>
-      <div className="content">
-        {post.content.map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        ))}
-      </div>
+      <div className="content" dangerouslySetInnerHTML={{ __html: safeContent }} />
     </div>
   );
 }

@@ -1,12 +1,21 @@
 import Link from "next/link";
-import { posts } from "@/lib/posts";
+import { createClient } from "@/lib/supabase/server";
+import type { Post } from "@/lib/blog";
 
 export const metadata = {
   title: "Blog — Simpatia",
   description: "Textos sobre simpatias, rituais populares e o universo místico brasileiro.",
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("published", true)
+    .order("created_at", { ascending: false });
+  const posts = (data as Post[]) ?? [];
+
   return (
     <div className="view">
       <div className="panel-header">
@@ -18,13 +27,19 @@ export default function BlogPage() {
         </p>
       </div>
       <div className="blog-list">
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
-            <div className="blog-eyebrow">{post.eyebrow}</div>
-            <h3>{post.title}</h3>
-            <p>{post.excerpt}</p>
-          </Link>
-        ))}
+        {posts.length === 0 ? (
+          <div className="empty-state">
+            <h3>Nenhum post ainda</h3>
+            <p>Volte em breve.</p>
+          </div>
+        ) : (
+          posts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
+              <h3>{post.title}</h3>
+              <p>{post.excerpt}</p>
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );

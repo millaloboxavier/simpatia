@@ -10,12 +10,23 @@ export default function Nav() {
   const pathname = usePathname();
   const router = useRouter();
   const [email, setEmail] = useState<string | null>(null);
+  const [isAuthor, setIsAuthor] = useState(false);
   const supabase = createClient();
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setEmail(data.user?.email ?? null));
+    async function syncUser(userId: string | null | undefined, userEmail: string | null | undefined) {
+      setEmail(userEmail ?? null);
+      if (!userId) {
+        setIsAuthor(false);
+        return;
+      }
+      const { data } = await supabase.from("authors").select("user_id").eq("user_id", userId).maybeSingle();
+      setIsAuthor(!!data);
+    }
+
+    supabase.auth.getUser().then(({ data }) => syncUser(data.user?.id, data.user?.email));
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setEmail(session?.user?.email ?? null);
+      syncUser(session?.user?.id, session?.user?.email);
     });
     return () => sub.subscription.unsubscribe();
   }, [supabase]);
@@ -44,6 +55,11 @@ export default function Nav() {
           </Link>
           {email ? (
             <>
+              {isAuthor && (
+                <Link href="/admin/posts" className={`navbtn-v2 ${isActive("/admin") ? "active" : ""}`}>
+                  Escrever
+                </Link>
+              )}
               <Link href="/conta" className={`navbtn-v2 ${isActive("/conta") ? "active" : ""}`} title={email}>
                 Minha conta
               </Link>

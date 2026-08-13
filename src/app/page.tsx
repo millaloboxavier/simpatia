@@ -1,8 +1,16 @@
 import Link from "next/link";
-import { posts } from "@/lib/posts";
+import { createClient } from "@/lib/supabase/server";
+import type { Post } from "@/lib/blog";
 
-export default function Home() {
-  const featuredPosts = posts.slice(0, 3);
+export default async function Home() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("published", true)
+    .order("created_at", { ascending: false })
+    .limit(3);
+  const featuredPosts = (data as Post[]) ?? [];
 
   return (
     <div className="view home-v2">

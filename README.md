@@ -25,6 +25,9 @@ antes. Siga na ordem.
    o conteúdo e cole no editor.
 3. Clique em **Run**. Isso cria a tabela `pedidos` (onde ficam guardadas as simpatias de cada
    pessoa) já com as regras de segurança que garantem que cada usuária só vê os próprios dados.
+4. Abra uma **New query** de novo, copie o conteúdo de
+   [`supabase/blog_cms.sql`](./supabase/blog_cms.sql) e rode também. Isso cria as tabelas do
+   blog (`posts` e `authors`) e já migra os 3 posts que existiam fixos no código.
 
 ### 1.2. Pegar as chaves de API
 
@@ -114,23 +117,43 @@ Isso garante que o login (inclusive Google/Facebook) funcione corretamente em pr
 - **Cadastro obrigatório** para criar simpatias: e-mail/senha, Google e Facebook (via Supabase
   Auth), com Row Level Security no banco — cada pessoa só acessa os próprios dados.
 - **Painel "Minhas simpatias"** com histórico e filtros.
-- **Blog** simples com 3 posts iniciais sobre o universo das simpatias
-  (`src/lib/posts.ts` — adicionar novos posts é só adicionar um item nessa lista).
+- **Página "Minha conta"**, com opção de excluir a conta permanentemente.
+- **Blog com CMS próprio**: os posts ficam guardados no Supabase (não mais fixos no código), e
+  qualquer conta marcada como "autora" pode escrever, editar e publicar direto pelo site, em
+  **simpatia.me/admin/posts** — sem precisar mexer em código. Veja como liberar acesso pra uma
+  autora na seção abaixo.
 - **Vitrine na home** com as próximas simpatias marcadas como "Em breve" (Vela do Amor, Jarro da
   Prosperidade, Fita do Bonfim) — ainda não construídas, só ilustrativas.
+
+## Como dar acesso de autora do blog pra alguém
+
+1. A pessoa precisa **criar uma conta normal no site** primeiro (em simpatia.me/signup).
+2. No Supabase, vá em **Authentication** → **Users** e encontre o e-mail dela. Copie o **User
+   UID** (um código tipo `a1b2c3d4-...`).
+3. Vá em **SQL Editor** → **New query** e rode (trocando pelo UID copiado):
+   ```sql
+   insert into public.authors (user_id, display_name) values ('cole-o-uid-aqui', 'Nome da autora');
+   ```
+4. Pronto — da próxima vez que ela entrar no site, vai aparecer um link **"Escrever"** no menu,
+   levando pra área de posts dela.
+
+Pra tirar o acesso de alguém, é só apagar a linha correspondente na tabela `authors` (pelo
+**Table Editor** do Supabase, é bem visual).
 
 ## Estrutura do projeto
 
 ```
 src/
   app/            → páginas (rotas) do site
-  components/      → Nav, formulário de login/cadastro, toast
+    admin/posts/   → área onde autoras escrevem/editam posts do blog
+  components/      → Nav, formulário de login/cadastro, editor de texto, toast
   lib/
-    supabase/      → clientes Supabase (browser, server, proxy/sessão)
-    posts.ts       → conteúdo do blog
+    supabase/      → clientes Supabase (browser, server, admin, proxy/sessão)
+    blog.ts        → tipo dos posts
     toast.ts       → notificações simples
 supabase/
-  schema.sql       → script que cria a tabela `pedidos` e as regras de segurança
+  schema.sql       → tabela `pedidos` (Simpatia do Congelador) e regras de segurança
+  blog_cms.sql     → tabelas `posts` e `authors` (CMS do blog) e regras de segurança
 ```
 
 ## Próximos passos sugeridos

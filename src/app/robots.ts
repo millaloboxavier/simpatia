@@ -9,6 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           "/painel",
           "/conta",
+          "/admin",
           "/login",
           "/signup",
           "/forgot-password",
