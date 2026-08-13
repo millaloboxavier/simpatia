@@ -218,7 +218,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 
 /* ---------- Congelador view ---------- */
 .freezer-header{padding:56px 0 10px;}
-.freezer-header h1{font-size:clamp(26px,3.4vw,36px);}
+.freezer-header h1{font-size:clamp(40px,9vw,50px); line-height:1.08;}
 .freezer-header p{color:var(--ink-soft); margin-top:10px; max-width:560px; font-size:15.5px; line-height:1.6;}
 
 .freezer-layout{
@@ -473,7 +473,7 @@ footer{
 .blog-card h3{font-size:20px; margin-bottom:8px;}
 .blog-card p{color:var(--ink-soft); font-size:14.5px; line-height:1.6; margin:0;}
 .blog-post{padding:56px 0 100px; max-width:680px; margin:0 auto;}
-.blog-post h1{font-size:clamp(28px,4vw,40px); margin-bottom:16px;}
+.blog-post h1{font-size:clamp(40px,9vw,50px); line-height:1.08; margin-bottom:16px;}
 .blog-post .blog-meta{color:var(--ink-soft); font-size:13.5px; margin-bottom:32px;}
 .blog-post .content p{color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px;}
 .blog-post .content h2{font-size:22px; margin:32px 0 14px;}

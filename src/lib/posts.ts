@@ -25,13 +25,13 @@ export const posts: Post[] = [
     slug: "simpatia-do-congelador-como-fazer",
     title: "Simpatia do Congelador: como fazer (e por que ela é tão popular)",
     excerpt:
-      "O passo a passo tradicional da simpatia mais compartilhada entre amigas — e como a versão digital da Simpatia recria essa experiência.",
+      "O passo a passo tradicional da simpatia mais compartilhada entre amigas — e como a versão digital do Simpatia.me recria essa experiência.",
     eyebrow: "Passo a passo",
     date: "2026-07-27",
     content: [
       "A versão tradicional é simples: escreva num papel o nome da pessoa ou da situação que você quer 'esfriar', dobre o papel e coloque no congelador, entre os cubos de gelo ou embaixo de algum pote.",
       "A crença é que, enquanto o papel estiver congelado, aquela energia fica 'parada' — sem avançar, sem te afetar. Muita gente relata alívio só pelo gesto de colocar no papel o que estava só na cabeça.",
-      "Na Simpatia, a lógica é a mesma, mas com acompanhamento: você vê os dias passando, o gelo se formando visualmente, e tem um momento de fechamento — descongelar — quando sentir que já resolveu.",
+      "No Simpatia.me, a lógica é a mesma, mas com acompanhamento: você vê os dias passando, o gelo se formando visualmente, e tem um momento de fechamento — descongelar — quando sentir que já resolveu.",
     ],
   },
   {
@@ -44,7 +44,7 @@ export const posts: Post[] = [
     content: [
       "Vela do Amor, Jarro da Prosperidade, Fita do Bonfim — cada região do Brasil tem seus próprios rituais, mas todos compartilham uma estrutura parecida: uma intenção clara, um gesto simbólico e um tempo de espera.",
       "Esse padrão não é coincidência. Rituais com começo, meio e fim ajudam a mente a processar incertezas. É por isso que essas práticas atravessam gerações, mesmo em um mundo cada vez mais digital.",
-      "Em breve, essas simpatias também vão ganhar vida na Simpatia — cada uma com sua própria forma de acompanhar o tempo e comemorar o resultado.",
+      "Em breve, essas simpatias também vão ganhar vida no Simpatia.me — cada uma com sua própria forma de acompanhar o tempo e comemorar o resultado.",
     ],
   },
 ];

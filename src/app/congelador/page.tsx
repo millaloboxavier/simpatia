@@ -117,7 +117,7 @@ export default function CongeladorPage() {
   }
 
   function shareMessage(text: string, days: number) {
-    return `Descongelei uma simpatia na Simpatia: "${text}" — resolvido depois de ${days} dia${days === 1 ? "" : "s"}! 🎉`;
+    return `Descongelei uma simpatia no Simpatia.me: "${text}" — resolvido depois de ${days} dia${days === 1 ? "" : "s"}! 🎉`;
   }
 
   return (
@@ -248,7 +248,7 @@ export default function CongeladorPage() {
           Tem pessoa, situação ou pensamento que já passou da validade, mas continua ocupando
           espaço na sua vida? A simpatia do congelador é um ritual popular usado por quem deseja
           afastar uma presença inconveniente, interromper conflitos ou simplesmente esfriar um
-          drama que anda quente demais. Na Simpatia, você pode fazer esse gesto simbólico de um
+          drama que anda quente demais. No Simpatia.me, você pode fazer esse gesto simbólico de um
           jeito virtual, privado e sem precisar explicar por que existe um nome misterioso ao
           lado do feijão congelado.
         </p>
@@ -307,7 +307,7 @@ export default function CongeladorPage() {
         </p>
 
         <p className="seo-disclaimer">
-          A Simpatia oferece experiências simbólicas para entretenimento e reflexão. Não fazemos
+          O Simpatia.me oferece experiências simbólicas para entretenimento e reflexão. Não fazemos
           promessas de resultado — nem o universo assinou esse SLA.
         </p>
       </div>
