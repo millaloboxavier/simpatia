@@ -133,8 +133,14 @@ export default async function Home() {
         <div className="blog-teaser-grid">
           {featuredPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-teaser-card">
-              <h4>{post.title}</h4>
-              <p>{post.excerpt}</p>
+              {post.cover_image_url && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={post.cover_image_url} alt="" className="blog-teaser-card-cover" />
+              )}
+              <div>
+                <h4>{post.title}</h4>
+                <p>{post.excerpt}</p>
+              </div>
             </Link>
           ))}
         </div>

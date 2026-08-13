@@ -660,13 +660,16 @@ header.nav.nav-v2{
   font-family:'Caveat', cursive; font-style:normal; color:var(--acento); font-weight:700;
   font-size:1.2em; line-height:1;
 }
-.blog-teaser-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:28px; }
+.blog-teaser-grid{ display:flex; flex-direction:column; gap:22px; margin-top:32px; max-width:640px; }
 .blog-teaser-card{
-  background:var(--cream-2); border-radius:18px; padding:22px; text-decoration:none; color:var(--ink-v2);
-  display:flex; flex-direction:column; gap:8px;
+  text-decoration:none; color:var(--ink-v2);
+  display:flex; align-items:flex-start; gap:18px;
 }
-.blog-teaser-card h4{ font-family:'Fraunces', serif; font-weight:600; font-size:16.5px; }
-.blog-teaser-card p{ font-size:13.5px; color:var(--ink-v2-soft); line-height:1.5; margin:0; }
+.blog-teaser-card-cover{
+  width:96px; height:96px; border-radius:14px; object-fit:cover; flex-shrink:0;
+}
+.blog-teaser-card h4{ font-family:'Fraunces', serif; font-weight:700; font-size:18px; margin-bottom:6px; }
+.blog-teaser-card p{ font-size:14px; color:var(--ink-v2-soft); line-height:1.5; margin:0; }
 .blog-teaser-cta{ margin-top:24px; }
 
 .quote-block{
