@@ -122,13 +122,47 @@ export default function CongeladorPage() {
 
   return (
     <div className="view">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "A simpatia do congelador funciona?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Simpatias fazem parte da cultura popular e não têm resultado garantido. O ritual pode funcionar como um gesto simbólico para organizar sentimentos, reforçar uma decisão ou marcar que você não quer mais alimentar determinada situação.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Preciso escrever o nome completo da pessoa?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Não. Você pode escrever um primeiro nome, apelido, iniciais ou até descrever uma situação, como 'fofoca no trabalho', 'reunião que poderia ser um e-mail' ou 'pensamentos sobre o ex'. Use o que representar melhor aquilo que você deseja esfriar.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Posso desfazer a simpatia depois?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Pode. Se a situação mudar, você se arrepender ou simplesmente sentir que o drama já descongelou sozinho, é possível retirar o pedido do seu congelador virtual.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <div className="freezer-header">
         <div className="eyebrow">Simpatia do Congelador</div>
-        <h2>O que você quer congelar hoje?</h2>
+        <h1>Simpatia do congelador: para dar um gelo no que está incomodando</h1>
         <p>
-          Escreva num post-it o que precisa esfriar — uma pessoa, uma situação, uma vontade
-          ruinzinha. A cada dia que passa, seu pedido acumula mais gelo. Quando sentir que já
-          resolveu, é só descongelar e comemorar.
+          Uma simpatia para &ldquo;congelar&rdquo; pensamentos, situações ou pessoas que estão te
+          tirando a paz e dar um tempo emocional enquanto tudo se acalma.
         </p>
       </div>
 
@@ -208,6 +242,75 @@ export default function CongeladorPage() {
           <div className="num">{finalizados.length}</div>
           <div className="lbl">simpatias já descongeladas</div>
         </div>
+      </div>
+
+      <div className="seo-content">
+        <p>
+          Tem pessoa, situação ou pensamento que já passou da validade, mas continua ocupando
+          espaço na sua vida? A simpatia do congelador é um ritual popular usado por quem deseja
+          afastar uma presença inconveniente, interromper conflitos ou simplesmente esfriar um
+          drama que anda quente demais. Na SimpatIA, você pode fazer esse gesto simbólico de um
+          jeito virtual, privado e sem precisar explicar por que existe um nome misterioso ao
+          lado do feijão congelado.
+        </p>
+
+        <h2>O que é a simpatia do congelador?</h2>
+        <p>
+          A simpatia do congelador parte de uma associação bem direta: congelar algo significa
+          paralisar, esfriar ou impedir que continue agindo. Tradicionalmente, a pessoa escreve
+          em um papel o nome de alguém ou a situação que deseja afastar e coloca esse pedido no
+          congelador.
+        </p>
+        <p>
+          Existem diferentes versões dessa simpatia popular, com ingredientes e modos de fazer
+          variados. Mas a intenção costuma ser a mesma: criar um marco simbólico para colocar
+          limites, diminuir uma influência indesejada ou deixar um problema em pausa enquanto a
+          vida segue.
+        </p>
+
+        <h2>Como funciona a simpatia do congelador virtual?</h2>
+        <p>
+          Aqui, o ritual acontece na tela — sem potes suspeitos, vazamentos ou perguntas de quem
+          abriu o freezer. Para fazer sua simpatia virtual:
+        </p>
+        <ul>
+          <li>Escreva o nome da pessoa, situação ou problema que você quer esfriar.</li>
+          <li>Coloque sua intenção no post-it virtual.</li>
+          <li>Arraste o papel até o congelador.</li>
+          <li>Feche a porta e deixe o universo processar a solicitação.</li>
+        </ul>
+        <p>
+          Seu ritual fica guardado na sua conta para que você possa voltar quando quiser. A
+          experiência é simbólica e feita para trazer um pequeno momento de intenção, humor e
+          alívio em meio aos dramas da vida real.
+        </p>
+
+        <h2>Dúvidas sobre a simpatia do congelador</h2>
+        <h3>A simpatia do congelador funciona?</h3>
+        <p>
+          Simpatias fazem parte da cultura popular e não têm resultado garantido. O ritual pode
+          funcionar como um gesto simbólico para organizar sentimentos, reforçar uma decisão ou
+          marcar que você não quer mais alimentar determinada situação. O universo, infelizmente,
+          ainda não fornece protocolo de atendimento.
+        </p>
+        <h3>Preciso escrever o nome completo da pessoa?</h3>
+        <p>
+          Não. Você pode escrever um primeiro nome, apelido, iniciais ou até descrever uma
+          situação, como &ldquo;fofoca no trabalho&rdquo;, &ldquo;reunião que poderia ser um
+          e-mail&rdquo; ou &ldquo;pensamentos sobre o ex&rdquo;. Use o que representar melhor
+          aquilo que você deseja esfriar.
+        </p>
+        <h3>Posso desfazer a simpatia depois?</h3>
+        <p>
+          Pode. Se a situação mudar, você se arrepender ou simplesmente sentir que o drama já
+          descongelou sozinho, é possível retirar o pedido do seu congelador virtual. Aqui,
+          nenhuma decisão precisa ficar congelada para sempre.
+        </p>
+
+        <p className="seo-disclaimer">
+          A SimpatIA oferece experiências simbólicas para entretenimento e reflexão. Não fazemos
+          promessas de resultado — nem o universo assinou esse SLA.
+        </p>
       </div>
 
       {/* Modal: adicionar pedido */}

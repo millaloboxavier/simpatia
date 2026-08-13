@@ -218,7 +218,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 
 /* ---------- Congelador view ---------- */
 .freezer-header{padding:56px 0 10px;}
-.freezer-header h2{font-size:clamp(26px,3.4vw,36px);}
+.freezer-header h1{font-size:clamp(26px,3.4vw,36px);}
 .freezer-header p{color:var(--ink-soft); margin-top:10px; max-width:560px; font-size:15.5px; line-height:1.6;}
 
 .freezer-layout{
@@ -477,6 +477,14 @@ footer{
 .blog-post .blog-meta{color:var(--ink-soft); font-size:13.5px; margin-bottom:32px;}
 .blog-post .content p{color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px;}
 .blog-post .content h2{font-size:22px; margin:32px 0 14px;}
+
+.seo-content{ max-width:720px; margin:70px auto 0; padding-bottom:80px; }
+.seo-content p{ color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px; }
+.seo-content h2{ font-size:24px; margin:40px 0 14px; }
+.seo-content h3{ font-size:18px; margin:24px 0 8px; }
+.seo-content ul{ margin:0 0 20px; padding-left:22px; }
+.seo-content li{ font-size:16.5px; line-height:1.75; color:var(--ink); margin-bottom:8px; }
+.seo-content .seo-disclaimer{ font-size:13px; color:var(--ink-soft); margin-top:32px; }
 
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;}
