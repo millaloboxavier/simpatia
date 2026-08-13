@@ -66,7 +66,7 @@ h1,h2,h3,h4,.display{
   letter-spacing:-0.01em;
   margin:0;
 }
-h1,h2{ color:var(--green-deep); }
+h1,h2{ color:var(--green-deep); font-weight:700; }
 .hand{ font-family:'Caveat', cursive; }
 a{color:inherit;}
 button{font-family:inherit;cursor:pointer;}
@@ -548,7 +548,7 @@ header.nav.nav-v2{
 }
 .hero-illustration-title em{ font-style:normal; color:var(--acento); }
 .hero-v2 h1{
-  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(40px,9vw,50px);
+  font-family:'Fraunces', serif; font-weight:700; font-size:clamp(40px,9vw,50px);
   line-height:1.08; max-width:600px;
 }
 .hero-v2 h1 em{
@@ -589,7 +589,7 @@ header.nav.nav-v2{
 }
 .helper-block .eyebrow-v2{ color:var(--on-dark-text); }
 .helper-block h2{
-  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(34px,3vw,38px);
+  font-family:'Fraunces', serif; font-weight:700; font-size:clamp(34px,3vw,38px);
   color:var(--on-dark-heading);
 }
 .helper-block h2 em{
@@ -598,7 +598,7 @@ header.nav.nav-v2{
 .helper-block p.lead-v2{ color:var(--on-dark-text); margin-top:14px; }
 .helper-block p.lead-v2 b{ color:var(--on-dark-heading); font-weight:700; }
 
-.helper-steps-list{ display:flex; flex-direction:row; gap:32px; margin-top:36px; }
+.helper-steps-list{ display:flex; flex-direction:row; gap:32px; margin-top:52px; }
 .helper-step{ display:flex; flex-direction:row; align-items:flex-start; gap:14px; flex:1; }
 .helper-step-icon{
   width:64px; height:64px; border-radius:50%; background:var(--creme-vela);
@@ -612,7 +612,7 @@ header.nav.nav-v2{
 
 .showcase-v2{ padding:20px 0 80px; }
 .showcase-v2 h2{
-  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(34px,3vw,38px);
+  font-family:'Fraunces', serif; font-weight:700; font-size:clamp(34px,3vw,38px);
 }
 .showcase-v2 p.lead-v2{ color:var(--ink-v2-soft); margin-top:10px; max-width:480px; }
 .showcase-v2 .eyebrow-v2{
@@ -647,7 +647,7 @@ header.nav.nav-v2{
 
 .blog-teaser{ padding:20px 0 80px; }
 .blog-teaser h2{
-  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(34px,3vw,38px); max-width:520px;
+  font-family:'Fraunces', serif; font-weight:700; font-size:clamp(34px,3vw,38px); max-width:520px;
 }
 .blog-teaser h2 em{
   font-family:'Caveat', cursive; font-style:normal; color:var(--acento); font-weight:700;
