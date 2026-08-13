@@ -60,7 +60,7 @@ body{
   overflow-x:hidden;
   width:100%;
 }
-h1,h2,h3,.display{
+h1,h2,h3,h4,.display{
   font-family:'Fraunces', serif;
   font-weight:600;
   letter-spacing:-0.01em;
