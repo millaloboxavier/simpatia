@@ -102,7 +102,9 @@ export default function Home() {
       </section>
 
       <section className="blog-teaser">
-        <h2>A gente foi procurar uma simpatia. Voltou com um Blog.</h2>
+        <h2>
+          A gente foi procurar uma simpatia. Voltou com um <em>Blog</em>.
+        </h2>
         <div className="blog-teaser-grid">
           {featuredPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-teaser-card">
@@ -121,11 +123,17 @@ export default function Home() {
       <section className="quote-block">
         <div className="eyebrow-v2">✦ entre nós e o Universo</div>
         <p>
-          A gente sabe. Pode ser coincidência. Talvez sua avó estivesse certa. Talvez colocar um
-          nome no congelador numa reunião não tenha nenhuma relação com aquela reunião ter sido
-          cancelada.
+          A gente sabe.
+          <br />
+          Pode ser coincidência.
+          <br />
+          Talvez sua avó estivesse certa.
+          <br />
+          Talvez colocar um nome no congelador numa reunião não tenha nenhuma relação com aquela
+          reunião ter sido cancelada.
         </p>
-        <p className="emphasis">Mas ela foi cancelada. A gente prefere não estragar a história.</p>
+        <p className="emphasis">✦ Mas ela foi cancelada. ✦</p>
+        <p className="plain">A gente prefere não estragar a história.</p>
       </section>
     </div>
   );
