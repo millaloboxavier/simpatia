@@ -23,6 +23,7 @@ export default function PostForm({
   const [slugTouched, setSlugTouched] = useState(!!post);
   const [excerpt, setExcerpt] = useState(post?.excerpt ?? "");
   const [content, setContent] = useState(post?.content ?? "");
+  const [coverImageUrl, setCoverImageUrl] = useState(post?.cover_image_url ?? "");
   const [seoTitle, setSeoTitle] = useState(post?.seo_title ?? "");
   const [seoDescription, setSeoDescription] = useState(post?.seo_description ?? "");
   const [saving, setSaving] = useState(false);
@@ -49,6 +50,7 @@ export default function PostForm({
       slug: slugify(slug),
       excerpt: excerpt.trim(),
       content,
+      cover_image_url: coverImageUrl.trim() || null,
       seo_title: seoTitle.trim() || null,
       seo_description: seoDescription.trim() || null,
       updated_at: new Date().toISOString(),
@@ -112,6 +114,24 @@ export default function PostForm({
           maxLength={220}
           placeholder="Um resuminho de 1-2 frases sobre o post."
         />
+      </div>
+
+      <div>
+        <label htmlFor="cover">Imagem de capa (link)</label>
+        <input
+          id="cover"
+          type="text"
+          value={coverImageUrl}
+          onChange={(e) => setCoverImageUrl(e.target.value)}
+          placeholder="https://..."
+        />
+        <div className="hint-text">
+          Cole o link de uma imagem já publicada (ex: no Supabase Storage). Opcional.
+        </div>
+        {coverImageUrl && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={coverImageUrl} alt="" style={{ marginTop: 10, maxWidth: 240, borderRadius: 12 }} />
+        )}
       </div>
 
       <div>

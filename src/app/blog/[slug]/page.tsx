@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.seo_title || `${post.title} — Simpatia`,
     description: post.seo_description || post.excerpt,
+    openGraph: post.cover_image_url ? { images: [{ url: post.cover_image_url }] } : undefined,
   };
 }
 
@@ -35,6 +36,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="blog-meta">
         {new Date(post.created_at).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" })}
       </div>
+      {post.cover_image_url && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={post.cover_image_url} alt="" className="blog-post-cover" />
+      )}
       <div className="content" dangerouslySetInnerHTML={{ __html: safeContent }} />
     </div>
   );

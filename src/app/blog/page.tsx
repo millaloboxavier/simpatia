@@ -35,6 +35,10 @@ export default async function BlogPage() {
         ) : (
           posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
+              {post.cover_image_url && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={post.cover_image_url} alt="" className="blog-card-cover" />
+              )}
               <h3>{post.title}</h3>
               <p>{post.excerpt}</p>
             </Link>

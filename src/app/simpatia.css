@@ -463,11 +463,13 @@ footer{
 }
 .blog-card:hover{transform:translateY(-3px);}
 .blog-card .blog-eyebrow{font-size:12px; color:var(--ember-dark); font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;}
+.blog-card-cover{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin-bottom:16px;}
 .blog-card h3{font-size:20px; margin-bottom:8px;}
 .blog-card p{color:var(--ink-soft); font-size:14.5px; line-height:1.6; margin:0;}
 .blog-post{padding:56px 0 100px; max-width:680px; margin:0 auto;}
 .blog-post h1{font-size:clamp(40px,9vw,50px); line-height:1.08; margin-bottom:16px;}
 .blog-post .blog-meta{color:var(--ink-soft); font-size:13.5px; margin-bottom:32px;}
+.blog-post-cover{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:18px; margin-bottom:36px;}
 .blog-post .content p{color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px;}
 .blog-post .content h2{font-size:22px; margin:32px 0 14px;}
 
@@ -610,7 +612,7 @@ header.nav.nav-v2{
 .helper-step{ display:flex; flex-direction:row; align-items:flex-start; gap:14px; flex:1; }
 .helper-step-icon{
   width:64px; height:64px; border-radius:50%; background:var(--creme-vela);
-  display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;
+  flex-shrink:0; object-fit:cover;
 }
 .helper-step h4{
   font-family:'Fraunces', serif; font-weight:700; font-size:17px; color:var(--on-dark-heading);
@@ -633,6 +635,7 @@ header.nav.nav-v2{
 .simpatia-card{
   border-radius:24px; padding:30px 26px; display:flex; flex-direction:column; gap:14px;
   min-height:280px; text-decoration:none; color:var(--ink-v2);
+  border:1.5px solid var(--verde-feitico);
 }
 .simpatia-card .tag-v2{
   align-self:flex-start; background:rgba(28,42,32,0.1); color:var(--ink-v2);

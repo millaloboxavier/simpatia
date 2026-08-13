@@ -53,21 +53,36 @@ export default async function Home() {
         </p>
         <div className="helper-steps-list">
           <div className="helper-step">
-            <div className="helper-step-icon">📝</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="helper-step-icon"
+              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/escolhe-simpatia.png"
+              alt=""
+            />
             <div>
               <h4>Escolhe a Simpatia</h4>
               <p>atrair, conquistar, afastar, ou o drama da vez.</p>
             </div>
           </div>
           <div className="helper-step">
-            <div className="helper-step-icon">🕯️</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="helper-step-icon"
+              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/faz-ritual.png"
+              alt=""
+            />
             <div>
               <h4>Faz o Ritual Virtual</h4>
               <p>escreve. congela. acende. sopra...</p>
             </div>
           </div>
           <div className="helper-step">
-            <div className="helper-step-icon">🌌</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="helper-step-icon"
+              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/envia-universo.png"
+              alt=""
+            />
             <div>
               <h4>Envia para o Universo</h4>
               <p>agora até ele recebe pedido online.</p>
