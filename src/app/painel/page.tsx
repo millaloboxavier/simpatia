@@ -105,7 +105,9 @@ export default function PainelPage() {
                   if (p.status === "ativo") router.push("/congelador");
                 }}
               >
-                <span className={`dot ${p.status === "ativo" ? "active-dot" : "done-dot"}`}></span>
+                <span className="simpatia-icon" aria-hidden="true">
+                  🧊
+                </span>
                 <div className="txt-col">
                   <div className="t">{p.text}</div>
                   <div className="s">{p.status === "ativo" ? "Ainda em andamento" : "Resolvido"}</div>
