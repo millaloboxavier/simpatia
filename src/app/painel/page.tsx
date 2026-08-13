@@ -60,17 +60,17 @@ export default function PainelPage() {
         <div className="eyebrow">Seu histórico</div>
         <h2>Minhas simpatias</h2>
         <p style={{ color: "var(--ink-soft)", marginTop: 10, maxWidth: 560, fontSize: "15.5px" }}>
-          Tudo o que você já colocou pra congelar, esteja esperando ou já resolvido.
+          Tudo o que você já pediu, esteja em andamento ou já resolvido.
         </p>
         <div className="tabs">
           <button className={`tab ${filter === "todos" ? "active" : ""}`} onClick={() => setFilter("todos")}>
-            Todos
+            Todas
           </button>
           <button className={`tab ${filter === "ativos" ? "active" : ""}`} onClick={() => setFilter("ativos")}>
-            Congelados
+            Ativas
           </button>
           <button className={`tab ${filter === "finalizados" ? "active" : ""}`} onClick={() => setFilter("finalizados")}>
-            Descongelados
+            Resolvidas
           </button>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function PainelPage() {
                 <span className={`dot ${p.status === "ativo" ? "active-dot" : "done-dot"}`}></span>
                 <div className="txt-col">
                   <div className="t">{p.text}</div>
-                  <div className="s">{p.status === "ativo" ? "Ainda congelado" : "Descongelado e resolvido"}</div>
+                  <div className="s">{p.status === "ativo" ? "Ainda em andamento" : "Resolvido"}</div>
                 </div>
                 <span className={`days-chip ${p.status === "finalizado" ? "done" : ""}`}>
                   {days} dia{days === 1 ? "" : "s"}
