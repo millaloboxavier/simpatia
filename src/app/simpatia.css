@@ -320,7 +320,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 
 /* ---------- Painel / Minhas Simpatias ---------- */
 .panel-header{padding:56px 0 24px;}
-.panel-header h2{font-size:clamp(26px,3.4vw,34px);}
+.panel-header h1, .panel-header h2{font-size:clamp(40px,9vw,50px); line-height:1.08;}
 .tabs{display:flex; gap:8px; margin-top:26px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px;}
 .tab{
   background:none; border:1.5px solid var(--line); padding:9px 18px; border-radius:100px;
@@ -517,7 +517,7 @@ header.nav.nav-v2{
 .nav-v2 .logo-text-v2 em{ font-style:italic; color:var(--acento); }
 .nav-v2 nav.links a.navbtn-v2, .nav-v2 nav.links button.navbtn-v2{
   background:none; border:none; padding:9px 16px; border-radius:100px;
-  font-size:13.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+  font-size:14.5px; font-weight:500; letter-spacing:normal; text-transform:none;
   color:var(--ink-v2); text-decoration:none;
 }
 .nav-v2 nav.links a.navbtn-v2:hover, .nav-v2 nav.links button.navbtn-v2:hover{background:rgba(28,42,32,0.06);}
@@ -664,6 +664,7 @@ header.nav.nav-v2{
 }
 .blog-teaser-card h4{ font-family:'Fraunces', serif; font-weight:700; font-size:18px; margin-bottom:6px; }
 .blog-teaser-card p{ font-size:14px; color:var(--ink-v2-soft); line-height:1.5; margin:0; }
+.blog-teaser-card-date{ font-size:13px; color:var(--ink-v2-soft); }
 .blog-teaser-cta{ margin-top:24px; }
 
 .quote-block{

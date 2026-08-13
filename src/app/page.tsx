@@ -139,7 +139,13 @@ export default async function Home() {
               )}
               <div>
                 <h4>{post.title}</h4>
-                <p>{post.excerpt}</p>
+                <span className="blog-teaser-card-date">
+                  {new Date(post.created_at).toLocaleDateString("pt-BR", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </span>
               </div>
             </Link>
           ))}
