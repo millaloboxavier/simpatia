@@ -117,7 +117,7 @@ export default function CongeladorPage() {
   }
 
   function shareMessage(text: string, days: number) {
-    return `Descongelei uma simpatia no SimpatIA: "${text}" — resolvido depois de ${days} dia${days === 1 ? "" : "s"}! 🎉`;
+    return `Descongelei uma simpatia na Simpatia: "${text}" — resolvido depois de ${days} dia${days === 1 ? "" : "s"}! 🎉`;
   }
 
   return (
@@ -248,7 +248,7 @@ export default function CongeladorPage() {
           Tem pessoa, situação ou pensamento que já passou da validade, mas continua ocupando
           espaço na sua vida? A simpatia do congelador é um ritual popular usado por quem deseja
           afastar uma presença inconveniente, interromper conflitos ou simplesmente esfriar um
-          drama que anda quente demais. Na SimpatIA, você pode fazer esse gesto simbólico de um
+          drama que anda quente demais. Na Simpatia, você pode fazer esse gesto simbólico de um
           jeito virtual, privado e sem precisar explicar por que existe um nome misterioso ao
           lado do feijão congelado.
         </p>
@@ -307,7 +307,7 @@ export default function CongeladorPage() {
         </p>
 
         <p className="seo-disclaimer">
-          A SimpatIA oferece experiências simbólicas para entretenimento e reflexão. Não fazemos
+          A Simpatia oferece experiências simbólicas para entretenimento e reflexão. Não fazemos
           promessas de resultado — nem o universo assinou esse SLA.
         </p>
       </div>
@@ -388,7 +388,7 @@ export default function CongeladorPage() {
               Sua simpatia foi finalizada. Que bom que resolveu.
             </p>
             <div className="share-card">
-              <div className="sc-eyebrow">SimpatIA · Simpatia do Congelador</div>
+              <div className="sc-eyebrow">Simpatia do Congelador</div>
               <div className="sc-txt">&quot;{celebrate.text}&quot;</div>
               <div className="sc-days">
                 Resolvido depois de {celebrate.days} dia{celebrate.days === 1 ? "" : "s"} no congelador.

@@ -1,4 +1,4 @@
-# SimpatIA
+# Simpatia
 
 Site de "simpatias virtuais" — a primeira funcionalidade é a **Simpatia do Congelador**:
 escreva o que você quer "congelar", acompanhe os dias passando e finalize quando resolver.

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { posts } from "@/lib/posts";
 
 export const metadata = {
-  title: "Blog — SimpatIA",
+  title: "Blog — Simpatia",
   description: "Textos sobre simpatias, rituais populares e o universo místico brasileiro.",
 };
 
@@ -10,7 +10,7 @@ export default function BlogPage() {
   return (
     <div className="view">
       <div className="panel-header">
-        <div className="eyebrow">SimpatIA Blog</div>
+        <div className="eyebrow">Simpatia Blog</div>
         <h2>Conversas sobre esse universo místico</h2>
         <p style={{ color: "var(--ink-soft)", marginTop: 10, maxWidth: 560, fontSize: "15.5px" }}>
           Textos curtos sobre simpatias, rituais populares brasileiros e os porquês por trás
