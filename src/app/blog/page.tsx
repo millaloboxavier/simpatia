@@ -26,7 +26,7 @@ export default async function BlogPage() {
           deles.
         </p>
       </div>
-      <div className="blog-list">
+      <div className="blog-teaser-grid" style={{ marginTop: 20 }}>
         {posts.length === 0 ? (
           <div className="empty-state">
             <h3>Nenhum post ainda</h3>
@@ -34,13 +34,15 @@ export default async function BlogPage() {
           </div>
         ) : (
           posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-teaser-card">
               {post.cover_image_url && (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={post.cover_image_url} alt="" className="blog-card-cover" />
+                <img src={post.cover_image_url} alt="" className="blog-teaser-card-cover" />
               )}
-              <h3>{post.title}</h3>
-              <p>{post.excerpt}</p>
+              <div>
+                <h4>{post.title}</h4>
+                <p>{post.excerpt}</p>
+              </div>
             </Link>
           ))
         )}
