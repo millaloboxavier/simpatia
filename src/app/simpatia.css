@@ -225,7 +225,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   padding:0;
 }
 .freezer-stats-row{
-  display:flex; gap:14px; margin-top:20px; padding-bottom:100px; flex-wrap:wrap;
+  display:flex; gap:14px; margin-top:20px; padding-bottom:20px; flex-wrap:wrap;
 }
 .stat-card-compact{
   flex:1; min-width:180px; background:var(--paper); border-radius:14px; padding:12px 18px;
@@ -478,7 +478,7 @@ footer{
 .blog-post .content p{color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px;}
 .blog-post .content h2{font-size:22px; margin:32px 0 14px;}
 
-.seo-content{ max-width:720px; margin:70px auto 0; padding-bottom:80px; }
+.seo-content{ max-width:720px; margin:20px auto 0; padding-bottom:80px; }
 .seo-content p{ color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px; }
 .seo-content h2{ font-size:24px; margin:40px 0 14px; }
 .seo-content h3{ font-size:18px; margin:24px 0 8px; }

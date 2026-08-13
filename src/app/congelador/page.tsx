@@ -158,7 +158,6 @@ export default function CongeladorPage() {
         }}
       />
       <div className="freezer-header">
-        <div className="eyebrow">Simpatia do Congelador</div>
         <h1>Simpatia do congelador: para dar um gelo no que está incomodando</h1>
         <p>
           Uma simpatia para &ldquo;congelar&rdquo; pensamentos, situações ou pessoas que estão te
