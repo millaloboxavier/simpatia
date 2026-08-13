@@ -312,10 +312,10 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 /* ---------- Painel / Minhas Simpatias ---------- */
 .panel-header{padding:56px 0 24px;}
 .panel-header h2{font-size:clamp(26px,3.4vw,34px);}
-.tabs{display:flex; gap:8px; margin-top:26px;}
+.tabs{display:flex; gap:8px; margin-top:26px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px;}
 .tab{
   background:none; border:1.5px solid var(--line); padding:9px 18px; border-radius:100px;
-  font-size:14px; font-weight:600; color:var(--ink-soft);
+  font-size:14px; font-weight:600; color:var(--ink-soft); flex-shrink:0; white-space:nowrap;
 }
 .tab.active{background:var(--deep-teal); color:var(--creme-vela); border-color:var(--deep-teal);}
 
