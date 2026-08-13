@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import { createClient } from "@/lib/supabase/server";
 import type { Post } from "@/lib/blog";
 
@@ -24,7 +24,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = await getPost(slug);
   if (!post) notFound();
 
-  const safeContent = DOMPurify.sanitize(post.content);
+  const safeContent = sanitizeHtml(post.content, {
+    allowedTags: ["p", "h2", "h3", "b", "strong", "i", "em", "u", "a", "ul", "ol", "li", "br"],
+    allowedAttributes: { a: ["href", "target", "rel"] },
+  });
 
   return (
     <div className="view blog-post">
