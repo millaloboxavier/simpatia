@@ -660,11 +660,12 @@ header.nav.nav-v2{
   font-family:'Caveat', cursive; font-style:normal; color:var(--acento); font-weight:700;
   font-size:1.2em; line-height:1;
 }
-.blog-teaser-grid{ display:flex; flex-direction:column; gap:22px; margin-top:32px; max-width:640px; }
+.blog-teaser-grid{ display:flex; flex-direction:column; gap:18px; margin-top:32px; width:100%; }
 .blog-teaser-card{
-  text-decoration:none; color:var(--ink-v2);
-  display:flex; align-items:flex-start; gap:18px;
+  background:var(--cream-2); border-radius:18px; padding:22px; text-decoration:none; color:var(--ink-v2);
+  display:flex; align-items:flex-start; gap:18px; transition:transform 0.2s ease; width:100%;
 }
+.blog-teaser-card:hover{ transform:translateY(-3px); }
 .blog-teaser-card-cover{
   width:96px; height:96px; border-radius:14px; object-fit:cover; flex-shrink:0;
 }
