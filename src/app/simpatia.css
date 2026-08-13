@@ -633,11 +633,11 @@ header.nav.nav-v2{
   background:var(--green-deep); color:var(--on-dark-text); border-radius:28px; padding:48px 44px; margin:0 0 60px; text-align:center;
 }
 .quote-block .eyebrow-v2{
-  justify-content:center; color:var(--on-dark-text); font-family:'Caveat', cursive;
+  justify-content:center; color:var(--on-dark-heading); font-family:'Caveat', cursive;
   font-weight:700; font-size:26px; text-transform:none; letter-spacing:0;
 }
 .quote-block p{ font-family:'Fraunces', serif; font-size:clamp(18px,2.2vw,23px); line-height:1.7; max-width:640px; margin:16px auto 0; color:var(--on-dark-text); }
-.quote-block p.emphasis{ font-style:normal; font-weight:700; color:var(--terracotta); margin-top:26px; }
+.quote-block p.emphasis{ font-style:normal; font-weight:700; color:var(--on-dark-heading); margin-top:26px; }
 .quote-block p.plain{ font-weight:400; margin-top:8px; }
 
 @media (max-width:860px){
