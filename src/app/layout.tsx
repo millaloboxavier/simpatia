@@ -4,10 +4,33 @@ import Nav from "@/components/Nav";
 import Toaster from "@/components/Toaster";
 import { LOGO_URL } from "@/lib/brand";
 
+const SITE_URL = "https://simpatia.me";
+const TITLE = "Simpatia | Magia virtual para os dramas da vida real";
+const DESCRIPTION =
+  "Simpatias online para aqueles momentos em que uma ajudinha do Universo cairia bem. Faça a Simpatia do Congelador, do Mel com Pimenta ou da Canela — tudo direto do navegador.";
+
 export const metadata: Metadata = {
-  title: "SimpatIA — congele o que precisa resolver",
-  description:
-    "SimpatIA é onde suas simpatias ganham forma, acompanhamento e um fechamento de verdade. Comece pela Simpatia do Congelador.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s | Simpatia",
+  },
+  description: DESCRIPTION,
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: SITE_URL,
+    siteName: "Simpatia",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: LOGO_URL }],
+  },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [LOGO_URL],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
