@@ -285,26 +285,41 @@ export default function CongeladorPage() {
         </p>
 
         <h2>Dúvidas sobre a simpatia do congelador</h2>
-        <h3>A simpatia do congelador funciona?</h3>
-        <p>
-          Simpatias fazem parte da cultura popular e não têm resultado garantido. O ritual pode
-          funcionar como um gesto simbólico para organizar sentimentos, reforçar uma decisão ou
-          marcar que você não quer mais alimentar determinada situação. O universo, infelizmente,
-          ainda não fornece protocolo de atendimento.
-        </p>
-        <h3>Preciso escrever o nome completo da pessoa?</h3>
-        <p>
-          Não. Você pode escrever um primeiro nome, apelido, iniciais ou até descrever uma
-          situação, como &ldquo;fofoca no trabalho&rdquo;, &ldquo;reunião que poderia ser um
-          e-mail&rdquo; ou &ldquo;pensamentos sobre o ex&rdquo;. Use o que representar melhor
-          aquilo que você deseja esfriar.
-        </p>
-        <h3>Posso desfazer a simpatia depois?</h3>
-        <p>
-          Pode. Se a situação mudar, você se arrepender ou simplesmente sentir que o drama já
-          descongelou sozinho, é possível retirar o pedido do seu congelador virtual. Aqui,
-          nenhuma decisão precisa ficar congelada para sempre.
-        </p>
+
+        <details className="faq-item">
+          <summary>
+            <h3>A simpatia do congelador funciona?</h3>
+          </summary>
+          <p>
+            Simpatias fazem parte da cultura popular e não têm resultado garantido. O ritual pode
+            funcionar como um gesto simbólico para organizar sentimentos, reforçar uma decisão ou
+            marcar que você não quer mais alimentar determinada situação. O universo,
+            infelizmente, ainda não fornece protocolo de atendimento.
+          </p>
+        </details>
+
+        <details className="faq-item">
+          <summary>
+            <h3>Preciso escrever o nome completo da pessoa?</h3>
+          </summary>
+          <p>
+            Não. Você pode escrever um primeiro nome, apelido, iniciais ou até descrever uma
+            situação, como &ldquo;fofoca no trabalho&rdquo;, &ldquo;reunião que poderia ser um
+            e-mail&rdquo; ou &ldquo;pensamentos sobre o ex&rdquo;. Use o que representar melhor
+            aquilo que você deseja esfriar.
+          </p>
+        </details>
+
+        <details className="faq-item">
+          <summary>
+            <h3>Posso desfazer a simpatia depois?</h3>
+          </summary>
+          <p>
+            Pode. Se a situação mudar, você se arrepender ou simplesmente sentir que o drama já
+            descongelou sozinho, é possível retirar o pedido do seu congelador virtual. Aqui,
+            nenhuma decisão precisa ficar congelada para sempre.
+          </p>
+        </details>
 
         <p className="seo-disclaimer">
           O Simpatia.me oferece experiências simbólicas para entretenimento e reflexão. Não fazemos

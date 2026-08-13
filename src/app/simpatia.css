@@ -486,6 +486,22 @@ footer{
 .seo-content li{ font-size:16.5px; line-height:1.75; color:var(--ink); margin-bottom:8px; }
 .seo-content .seo-disclaimer{ font-size:13px; color:var(--ink-soft); margin-top:32px; }
 
+.faq-item{
+  border-bottom:1px solid var(--line); padding:18px 0;
+}
+.faq-item summary{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  cursor:pointer; list-style:none;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary h3{ margin:0; font-size:17px; }
+.faq-item summary::after{
+  content:"+"; font-size:22px; font-weight:400; color:var(--ink-soft); flex-shrink:0;
+  transition:transform 0.2s ease;
+}
+.faq-item[open] summary::after{ content:"−"; }
+.faq-item p{ margin:14px 0 0; }
+
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;}
   .hero-visual{order:-1; margin-bottom:10px;}
