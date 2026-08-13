@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Simpatia de Soprar Canela Virtual: Atraia Dinheiro e Prosperidade | SimpatIA",
+  description:
+    "Sopre a canela digital na tela para abrir caminhos financeiros. Atraia dinheiro, novas oportunidades e abundância com o nosso ritual virtual interativo.",
+};
 
 export default function AtrairPage() {
   return (
