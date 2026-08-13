@@ -92,7 +92,7 @@ export default async function Home() {
       </section>
 
       <section className="showcase-v2" id="vitrine">
-        <h2>Escolha sua simpatia</h2>
+        <h2>O que você quer pedir para o Universo?</h2>
         <p className="lead-v2">
           Crush não responde? Reunião marcada sexta às 17h? Dinheiro evaporando antes do fim do
           mês?

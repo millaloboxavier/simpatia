@@ -605,7 +605,7 @@ header.nav.nav-v2{
   flex-shrink:0; object-fit:cover;
 }
 .helper-step h4{
-  font-family:'Fraunces', serif; font-weight:700; font-size:17px; color:var(--on-dark-heading);
+  font-family:'Fraunces', serif; font-weight:700; font-size:24px; color:var(--on-dark-heading);
   margin-bottom:4px;
 }
 .helper-step p{ font-size:14.5px; line-height:1.5; color:var(--on-dark-text); margin:0; }
