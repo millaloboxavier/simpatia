@@ -68,9 +68,14 @@ export default function Nav() {
               </button>
             </>
           ) : (
-            <Link href="/login" className="navbtn-v2 cta">
-              Entrar
-            </Link>
+            <>
+              <Link href="/login" className={`navbtn-v2 ${isActive("/login") ? "active" : ""}`}>
+                Entrar
+              </Link>
+              <Link href="/signup" className="navbtn-v2 cta">
+                Criar conta
+              </Link>
+            </>
           )}
         </nav>
       </div>
