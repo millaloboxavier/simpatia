@@ -229,9 +229,9 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .stat-card-compact .lbl{font-size:12.5px; color:var(--ink-soft); font-weight:600;}
 
 .freezer-unit{
-  background:linear-gradient(165deg, var(--azul-abismo) 0%, #0B252D 55%, var(--azul-mare) 145%);
+  background:linear-gradient(165deg, var(--azul-mare) 0%, var(--azul-sereno) 60%, var(--azul-intuicao) 145%);
   border-radius:28px; box-shadow:var(--shadow); padding:26px; padding-right:44px; position:relative; min-height:460px;
-  border:1px solid rgba(175,213,222,0.18);
+  border:1px solid rgba(175,213,222,0.35);
 }
 .freezer-unit::before{
   content:""; position:absolute; inset:14px; border-radius:18px; pointer-events:none;
