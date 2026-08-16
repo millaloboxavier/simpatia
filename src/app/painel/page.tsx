@@ -78,11 +78,16 @@ export default function PainelPage() {
       <div className="panel-list">
         {userId === null ? (
           <div className="empty-state">
-            <h3>Faça login pra ver suas simpatias</h3>
+            <h3>Crie sua conta ou faça login pra ver suas simpatias</h3>
             <p>Seu histórico fica guardado com segurança, ligado à sua conta.</p>
-            <Link href="/login?next=/painel" className="btn btn-dark" style={{ marginTop: 16, display: "inline-flex" }}>
-              Entrar
-            </Link>
+            <div className="modal-actions" style={{ margin: "16px auto 0", maxWidth: 320 }}>
+              <Link href="/login?next=/painel" className="btn btn-ghost">
+                Entrar
+              </Link>
+              <Link href="/signup?next=/painel" className="btn btn-dark">
+                Criar conta
+              </Link>
+            </div>
           </div>
         ) : loading ? (
           <div className="empty-state">

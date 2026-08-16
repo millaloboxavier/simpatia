@@ -170,10 +170,15 @@ export default function CongeladorPage() {
           className="auth-error"
           style={{ marginTop: 20, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}
         >
-          <span>Faça login para criar e guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
-          <Link href="/login?next=/congelador" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
-            Entrar
-          </Link>
+          <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
+          <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+            <Link href="/login?next=/congelador" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
+              Entrar
+            </Link>
+            <Link href="/signup?next=/congelador" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
+              Criar conta
+            </Link>
+          </div>
         </div>
       )}
 
