@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./simpatia.css";
 import Nav from "@/components/Nav";
 import Toaster from "@/components/Toaster";
 import { LOGO_URL } from "@/lib/brand";
 
 const SITE_URL = "https://simpatia.me";
+const GA_MEASUREMENT_ID = "G-H151JBDKRN";
 const TITLE = "Simpatia | Magia virtual para os dramas da vida real";
 const DESCRIPTION =
   "Simpatias online para aqueles momentos em que uma ajudinha do Universo cairia bem. Faça a Simpatia do Congelador, do Mel com Pimenta ou da Canela — tudo direto do navegador.";
@@ -45,6 +47,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <div className="app">
           <Nav />
           <main className="container" style={{ flex: 1 }}>
