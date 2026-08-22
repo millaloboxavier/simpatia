@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { showToast } from "@/lib/toast";
 import { daysFrozen as computeDaysFrozen } from "@/lib/pedidos";
+import { trackEvent } from "@/lib/analytics";
 
 type Pedido = {
   id: string;
@@ -97,6 +98,7 @@ export default function CongeladorPage() {
     setShowAdd(false);
     setNoteInput("");
     showToast("Pedido congelado ❄️");
+    trackEvent("pedido_criado", { simpatia: "congelador" });
   }
 
   async function handleFinalize() {

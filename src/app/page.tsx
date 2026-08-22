@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import type { Post } from "@/lib/blog";
+import HeroCta from "@/components/HeroCta";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -24,9 +25,7 @@ export default async function Home() {
               Magias online para aqueles momentos em que uma ajudinha do Universo cairia bem.
             </p>
             <div className="hero-v2-ctas">
-              <Link href="#vitrine" className="btn-v2">
-                Fazer uma Simpatia →
-              </Link>
+              <HeroCta />
             </div>
           </div>
           <div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 
 export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const supabase = createClient();
@@ -44,11 +45,13 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         return;
       }
       setInfo(`Enviamos um e-mail de confirmação para ${email}. Abra sua caixa de entrada e clique no link para ativar sua conta.`);
+      trackEvent("sign_up", { method: "email" });
     }
   }
 
   async function handleOAuth(provider: "google" | "facebook") {
     setError(null);
+    if (mode === "signup") trackEvent("sign_up", { method: provider });
     await supabase.auth.signInWithOAuth({
       provider,
       options: { redirectTo: `${window.location.origin}/auth/callback?next=${next}` },
