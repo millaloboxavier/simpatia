@@ -689,6 +689,7 @@ header.nav.nav-v2{
   .helper-grid{ grid-template-columns:1fr; }
   .home-v2{ margin:0 -20px; padding:0 20px; }
   .helper-steps-list{ flex-direction:column; gap:22px; }
+  .hero-illustration-title{ font-size:20px; margin-top:24px; }
 }
 
 /* ---------- Admin / editor de posts ---------- */
