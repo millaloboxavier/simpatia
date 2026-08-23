@@ -460,7 +460,7 @@ footer{
 .blog-post .blog-meta{color:var(--ink-soft); font-size:13.5px; margin-bottom:32px;}
 .blog-post-cover{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:18px; margin-bottom:36px;}
 .blog-post .content p{color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px;}
-.blog-post .content h2{font-size:22px; margin:32px 0 14px;}
+.blog-post .content h2{font-size:32px; margin:32px 0 14px;}
 
 .seo-content{ max-width:720px; margin:20px auto 0; padding-bottom:80px; }
 .seo-content p{ color:var(--ink); font-size:16.5px; line-height:1.75; margin:0 0 20px; }
