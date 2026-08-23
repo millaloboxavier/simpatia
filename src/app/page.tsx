@@ -34,7 +34,7 @@ export default async function Home() {
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/img-Header.png"
+              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/IMAGEM-HEADER.png"
               alt="Pote de vidro com pimenta e post-its representando um pedido enviado ao Universo"
               className="hero-illustration"
             />
