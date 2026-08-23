@@ -79,7 +79,7 @@ export default function PainelPage() {
         {userId === null ? (
           <div className="empty-state">
             <h3>Crie sua conta ou faça login pra ver suas simpatias</h3>
-            <p>Seu histórico fica guardado com segurança, ligado à sua conta.</p>
+            <p>Seus pedidos ficam só entre você e o universo.</p>
             <div className="modal-actions" style={{ margin: "16px auto 0", maxWidth: 320 }}>
               <Link href="/login?next=/painel" className="btn btn-ghost">
                 Entrar
