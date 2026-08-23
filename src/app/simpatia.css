@@ -256,7 +256,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   flex-wrap:wrap;
 }
 .freezer-top .label{
-  color:var(--azul-sereno); font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--azul-abismo); font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
 }
 .add-note-btn{
   background:var(--acento); color:var(--creme-vela); border:none; border-radius:12px;
@@ -275,7 +275,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:2px 10px; border-radius:100px;
 }
 .empty-shelf{
-  color:rgba(255,255,255,0.55); font-size:14px; padding:22px 6px; font-style:normal;
+  color:var(--azul-abismo); opacity:0.6; font-size:14px; padding:22px 6px; font-style:normal;
 }
 
 .note{
@@ -316,7 +316,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .freezer-foot{
   display:flex; justify-content:space-between; align-items:center; margin-top:6px; position:relative; z-index:2;
 }
-.freezer-foot .hint{color:rgba(255,255,255,0.5); font-size:12.5px;}
+.freezer-foot .hint{color:var(--azul-abismo); opacity:0.65; font-size:12.5px;}
 
 /* ---------- Painel / Minhas Simpatias ---------- */
 .panel-header{padding:56px 0 24px;}
