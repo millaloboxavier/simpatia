@@ -31,6 +31,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         setError("E-mail ou senha incorretos.");
         return;
       }
+      trackEvent("login", { method: "email" });
       router.push(next);
       router.refresh();
     } else {
@@ -51,7 +52,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
   async function handleOAuth(provider: "google" | "facebook") {
     setError(null);
-    if (mode === "signup") trackEvent("sign_up", { method: provider });
+    trackEvent(mode === "signup" ? "sign_up" : "login", { method: provider });
     await supabase.auth.signInWithOAuth({
       provider,
       options: { redirectTo: `${window.location.origin}/auth/callback?next=${next}` },

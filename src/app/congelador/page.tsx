@@ -53,6 +53,10 @@ export default function CongeladorPage() {
   }, [supabase]);
 
   useEffect(() => {
+    trackEvent("ritual_view", { ritual_type: "congelador" });
+  }, []);
+
+  useEffect(() => {
     if (!userId) {
       setLoading(false);
       return;
@@ -86,6 +90,7 @@ export default function CongeladorPage() {
     }
     if (!userId) return;
     setSaving(true);
+    trackEvent("ritual_submit", { ritual_type: "congelador" });
     const { data, error } = await supabase
       .from("pedidos")
       .insert({
@@ -105,7 +110,7 @@ export default function CongeladorPage() {
     setShowAdd(false);
     setNoteInput("");
     showToast("Pedido congelado ❄️");
-    trackEvent("pedido_criado", { simpatia: "congelador" });
+    trackEvent("ritual_complete", { ritual_type: "congelador" });
   }
 
   async function handleFinalize() {
@@ -123,6 +128,7 @@ export default function CongeladorPage() {
     setPedidos((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
     setDetailId(null);
     setCelebrate({ text: updated.text, days: daysFrozen(updated) });
+    trackEvent("ritual_unfreeze", { ritual_type: "congelador" });
   }
 
   function shareMessage(text: string, days: number) {
@@ -203,6 +209,7 @@ export default function CongeladorPage() {
                 setNoteInput("");
                 setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
                 setShowAdd(true);
+                trackEvent("ritual_start", { ritual_type: "congelador" });
               }}
             >
               + Adicionar pedido
@@ -227,7 +234,10 @@ export default function CongeladorPage() {
                     key={p.id}
                     className={`note ${p.color}`}
                     style={{ "--r": `${p.rotation}deg` } as React.CSSProperties}
-                    onClick={() => setDetailId(p.id)}
+                    onClick={() => {
+                      setDetailId(p.id);
+                      trackEvent("ritual_return", { ritual_type: "congelador" });
+                    }}
                   >
                     <div className="pin"></div>
                     <div className="frost-overlay" style={{ opacity: frostOpacity(days) }}></div>
