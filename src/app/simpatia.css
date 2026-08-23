@@ -585,7 +585,7 @@ header.nav.nav-v2{
 .jar-card .jar-status{ font-size:12.5px; font-weight:700; color:var(--green-deep); text-align:center; }
 
 .helper-block{
-  background:var(--green-deep); color:var(--on-dark-text); border-radius:28px; padding:44px 40px; margin:20px 0 76px;
+  background:var(--green-deep); color:var(--on-dark-text); border-radius:28px; padding:44px 20px; margin:20px 0 76px;
 }
 .helper-block .eyebrow-v2{ color:var(--on-dark-text); }
 .helper-block h2{
