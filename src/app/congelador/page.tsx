@@ -236,7 +236,7 @@ export default function CongeladorPage() {
                     style={{ "--r": `${p.rotation}deg` } as React.CSSProperties}
                     onClick={() => {
                       setDetailId(p.id);
-                      trackEvent("ritual_return", { ritual_type: "congelador" });
+                      trackEvent("ritual_open_saved", { ritual_type: "congelador" });
                     }}
                   >
                     <div className="pin"></div>

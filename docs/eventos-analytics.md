@@ -9,7 +9,7 @@ Referência de onde cada evento do GA4 é disparado no site. Todos passam pela f
 | `ritual_start` | Página do Congelador → clique no botão "+ Adicionar pedido" (abre o modal amarelo) | `src/app/congelador/page.tsx` |
 | `ritual_submit` | Modal "Novo pedido pro congelador" → clique em "Congelar 🧊" (dispara antes de salvar) | `src/app/congelador/page.tsx` |
 | `ritual_complete` | Mesmo botão "Congelar 🧊" → dispara depois que salvou com sucesso (aparece o toast "Pedido congelado ❄️") | `src/app/congelador/page.tsx` |
-| `ritual_return` | Página do Congelador → clique num post-it já existente na prateleira (abre o modal de detalhe) | `src/app/congelador/page.tsx` |
+| `ritual_open_saved` | Página do Congelador → clique num post-it já existente na prateleira (abre o modal de detalhe) — mede abertura de um pedido salvo, não necessariamente retorno ao site em outra sessão | `src/app/congelador/page.tsx` |
 | `ritual_unfreeze` | Modal de detalhe de um pedido ativo → clique em "Descongelar" / finalizar | `src/app/congelador/page.tsx` |
 | `sign_up` | Página de Criar conta (`/signup`) → clique em "Criar conta" (form) ou em "Continuar com Google/Facebook" | `src/components/AuthForm.tsx` |
 | `login` | Página de Entrar (`/login`) → clique em "Entrar" (form) ou em "Continuar com Google/Facebook" | `src/components/AuthForm.tsx` |
