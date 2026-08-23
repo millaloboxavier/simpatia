@@ -635,6 +635,7 @@ header.nav.nav-v2{
 .simpatia-card .icon-v2{ font-size:34px; }
 .simpatia-card h3{ font-family:'Fraunces', serif; font-weight:700; font-size:24px; }
 .simpatia-card p{ font-size:14.5px; line-height:1.55; color:var(--ink-v2-soft); flex:1; }
+
 .simpatia-card .go-v2{
   background:var(--green-deep); color:var(--creme-vela); border-radius:100px; padding:11px 18px;
   font-weight:700; font-size:13.5px; display:inline-flex; align-items:center; gap:8px; width:fit-content;
@@ -644,6 +645,11 @@ header.nav.nav-v2{
 .simpatia-card.card-lilas{ background:var(--lilas-misterio); }
 .simpatia-card.card-sorte{ background:var(--verde-sorte); }
 .simpatia-card.card-azul{ background:var(--azul-intuicao); }
+
+.simpatia-card.card-em-breve{ opacity:0.72; cursor:default; }
+.simpatia-card.card-em-breve:hover{ transform:none; box-shadow:none; }
+.simpatia-card .tag-em-breve{ background:var(--roxo-feitico); color:var(--creme-vela); }
+.simpatia-card.card-em-breve .go-v2{ background:transparent; color:var(--ink-v2-soft); font-style:italic; font-weight:500; padding-left:0; }
 
 .blog-teaser{ padding:20px 0 80px; }
 .blog-teaser h2{
