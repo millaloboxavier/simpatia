@@ -19,6 +19,12 @@ type Pedido = {
 
 const COLORS = ["color-amber", "color-mint", "color-coral"];
 
+const NOTE_PLACEHOLDERS = [
+  "Ex: meu ex aparecendo de novo...",
+  "Ex: a fofoca no trabalho...",
+  "Ex: aquela situação que eu queria bem longe...",
+];
+
 function daysFrozen(p: Pedido) {
   return computeDaysFrozen(p.created_at, p.finalized_at, p.status);
 }
@@ -35,6 +41,7 @@ export default function CongeladorPage() {
   const [loading, setLoading] = useState(true);
 
   const [showAdd, setShowAdd] = useState(false);
+  const [notePlaceholder, setNotePlaceholder] = useState(NOTE_PLACEHOLDERS[0]);
   const [noteInput, setNoteInput] = useState("");
   const [saving, setSaving] = useState(false);
 
@@ -194,6 +201,7 @@ export default function CongeladorPage() {
               disabled={!userId}
               onClick={() => {
                 setNoteInput("");
+                setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
                 setShowAdd(true);
               }}
             >
@@ -348,7 +356,7 @@ export default function CongeladorPage() {
           <textarea
             value={noteInput}
             onChange={(e) => setNoteInput(e.target.value)}
-            placeholder="Ex: a ansiedade que não me deixa dormir..."
+            placeholder={notePlaceholder}
             maxLength={140}
           />
           <div className="modal-actions">
