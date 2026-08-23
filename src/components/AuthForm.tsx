@@ -50,7 +50,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
     }
   }
 
-  async function handleOAuth(provider: "google" | "facebook") {
+  async function handleOAuth(provider: "google") {
     setError(null);
     trackEvent(mode === "signup" ? "sign_up" : "login", { method: provider });
     await supabase.auth.signInWithOAuth({
@@ -112,9 +112,6 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         <div className="oauth-row">
           <button className="btn-oauth" onClick={() => handleOAuth("google")}>
             Continuar com Google
-          </button>
-          <button className="btn-oauth" onClick={() => handleOAuth("facebook")}>
-            Continuar com Facebook
           </button>
         </div>
 
