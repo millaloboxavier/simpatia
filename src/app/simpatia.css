@@ -78,7 +78,7 @@ img,svg{display:block;}
 
 /* ---------- Layout shell ---------- */
 .app{min-height:100vh;display:flex;flex-direction:column;}
-.container{max-width:1120px;margin:0 auto;padding:0 28px;}
+.container{max-width:1120px;margin:0 auto;padding:0 18px;}
 
 /* ---------- Nav ---------- */
 header.nav{
