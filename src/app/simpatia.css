@@ -286,6 +286,13 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   display:flex; flex-direction:column; justify-content:space-between;
 }
 .note:hover{transform:rotate(0deg) translateY(-3px); box-shadow:0 12px 22px rgba(0,0,0,0.3);}
+.note-example{ cursor:default; opacity:0.85; }
+.note-example:hover{ transform:rotate(var(--r,-2deg)); box-shadow:0 8px 16px rgba(0,0,0,0.22); }
+.note-example-tag{
+  position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.12); color:#4a3a12;
+  font-family:'Sora',sans-serif; font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.04em; padding:2px 8px; border-radius:100px;
+}
 .note.color-amber{background:var(--postit-amber); color:#4a3a12;}
 .note.color-mint{background:var(--postit-mint); color:#22421c;}
 .note.color-coral{background:var(--postit-coral); color:#5a2716;}

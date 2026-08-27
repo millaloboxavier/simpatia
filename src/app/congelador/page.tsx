@@ -220,12 +220,14 @@ export default function CongeladorPage() {
             <span className="shelf-label">Prateleira de cima</span>
             {loading ? (
               <div className="empty-shelf">Carregando...</div>
-            ) : ativos.length === 0 ? (
-              <div className="empty-shelf">
-                {userId
-                  ? "Vazio por enquanto. Adicione o primeiro pedido pra começar a congelar."
-                  : "Faça login para ver seus pedidos congelados."}
+            ) : userId === null ? (
+              <div className="note color-amber note-example" style={{ "--r": "-2deg" } as React.CSSProperties}>
+                <div className="pin"></div>
+                <span className="note-example-tag">Exemplo</span>
+                <div className="txt">aquele climão com meu chefe...</div>
               </div>
+            ) : ativos.length === 0 ? (
+              <div className="empty-shelf">Vazio por enquanto. Adicione o primeiro pedido pra começar a congelar.</div>
             ) : (
               ativos.map((p) => {
                 const days = daysFrozen(p);
