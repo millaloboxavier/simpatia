@@ -7,6 +7,8 @@ import { LOGO_URL } from "@/lib/brand";
 
 const SITE_URL = "https://simpatia.me";
 const GA_MEASUREMENT_ID = "G-H151JBDKRN";
+const FAVICON_URL =
+  "https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/favicon.png";
 const TITLE = "Simpatia | Magia virtual para os dramas da vida real";
 const DESCRIPTION =
   "Simpatias online para aqueles momentos em que uma ajudinha do Universo cairia bem. Faça a Simpatia do Congelador, do Mel com Pimenta ou da Canela — tudo direto do navegador.";
@@ -18,6 +20,11 @@ export const metadata: Metadata = {
     template: "%s | Simpatia",
   },
   description: DESCRIPTION,
+  icons: {
+    icon: FAVICON_URL,
+    shortcut: FAVICON_URL,
+    apple: FAVICON_URL,
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
