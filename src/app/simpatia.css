@@ -210,7 +210,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .card.soon .icon{background:rgba(15,46,54,0.08);}
 
 /* ---------- Congelador view ---------- */
-.congelador-top-grid{
+.ritual-top-grid{
   display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:center; padding:56px 0 20px;
 }
 .freezer-header{padding:0;}
@@ -221,7 +221,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   padding:0;
 }
 @media (max-width:860px){
-  .congelador-top-grid{ grid-template-columns:1fr; padding:32px 0 20px; }
+  .ritual-top-grid{ grid-template-columns:1fr; padding:32px 0 20px; }
 }
 .freezer-stats-row{
   display:flex; gap:14px; margin-top:20px; padding-bottom:20px; flex-wrap:wrap;
@@ -264,6 +264,20 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .freezer-top .label{
   color:var(--azul-abismo); font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
 }
+
+/* Tema "mel e pimenta" reaproveitando a estrutura do widget do congelador */
+.freezer-unit.theme-mel{
+  background:var(--creme-desejo); border-color:rgba(108,43,107,0.22);
+}
+.theme-mel .freezer-handle{
+  background:linear-gradient(180deg, var(--branco-estrela), var(--postit-amber));
+  box-shadow:0 0 14px rgba(255,216,115,0.55);
+}
+.theme-mel .freezer-top .label{ color:var(--roxo-feitico); }
+.theme-mel .shelf{ background:rgba(108,43,107,0.05); border-color:rgba(108,43,107,0.1); }
+.theme-mel .shelf-label{ background:var(--roxo-feitico); color:var(--creme-vela); }
+.theme-mel .empty-shelf{ color:var(--roxo-feitico); }
+.theme-mel .hint{ color:var(--roxo-feitico); }
 .add-note-btn{
   background:var(--acento); color:var(--creme-vela); border:none; border-radius:12px;
   padding:11px 18px; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;

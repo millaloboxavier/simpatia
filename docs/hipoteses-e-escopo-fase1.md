@@ -167,7 +167,7 @@ Depois de validar esse padrão internamente, a mesma estrutura poderá ser reapr
 Referência rápida do que já existe no código versus o que este documento planeja:
 
 - ✅ Congelador — construído e funcional (fluxo completo, conta/privacidade, SEO + FAQ, analytics)
-- ⏳ Amor/adoçamento (Mel e Pimenta) — placeholder no site, ainda não desenvolvido
+- ✅ Amor/adoçamento (Mel e Pimenta) — construído e funcional (fluxo completo, conta/privacidade, SEO + FAQ, analytics)
 - ⏳ Prosperidade/trabalho (Canela) — placeholder no site, ainda não desenvolvido
 - ✅ Blog com conteúdo SEO — implementado como CMS próprio (autoras convidadas publicam direto)
 - ✅ Eventos de analytics — `cta_fazer_simpatia`, `sign_up`, `pedido_criado` no GA4, mais Search Console para origem do tráfego orgânico

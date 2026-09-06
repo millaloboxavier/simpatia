@@ -66,6 +66,7 @@ export default function CongeladorPage() {
       const { data, error } = await supabase
         .from("pedidos")
         .select("*")
+        .eq("ritual_type", "congelador")
         .order("created_at", { ascending: false });
       if (!cancelled) {
         if (!error && data) setPedidos(data as Pedido[]);
@@ -96,6 +97,7 @@ export default function CongeladorPage() {
       .insert({
         user_id: userId,
         text,
+        ritual_type: "congelador",
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
         rotation: Number((Math.random() * 6 - 3).toFixed(1)),
       })
@@ -172,7 +174,7 @@ export default function CongeladorPage() {
           }),
         }}
       />
-      <div className="congelador-top-grid">
+      <div className="ritual-top-grid">
         <div>
           <div className="freezer-header">
             <h1>Simpatia do congelador: para dar um gelo no que está incomodando</h1>

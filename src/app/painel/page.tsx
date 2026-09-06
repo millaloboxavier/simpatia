@@ -10,8 +10,15 @@ type Pedido = {
   id: string;
   text: string;
   status: "ativo" | "finalizado";
+  ritual_type: string;
   created_at: string;
   finalized_at: string | null;
+};
+
+const RITUAL_INFO: Record<string, { icon: string; href: string }> = {
+  congelador: { icon: "🧊", href: "/congelador" },
+  mel_pimenta: { icon: "🍯", href: "/simpatias/conquistar" },
+  canela: { icon: "✨", href: "/simpatias/atrair" },
 };
 
 function daysFrozen(p: Pedido) {
@@ -107,11 +114,11 @@ export default function PainelPage() {
                 className="row-item"
                 style={p.status === "ativo" ? { cursor: "pointer" } : undefined}
                 onClick={() => {
-                  if (p.status === "ativo") router.push("/congelador");
+                  if (p.status === "ativo") router.push(RITUAL_INFO[p.ritual_type]?.href ?? "/congelador");
                 }}
               >
                 <span className="simpatia-icon" aria-hidden="true">
-                  🧊
+                  {RITUAL_INFO[p.ritual_type]?.icon ?? "🧊"}
                 </span>
                 <div className="txt-col">
                   <div className="t">{p.text}</div>

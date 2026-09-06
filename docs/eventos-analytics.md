@@ -5,12 +5,14 @@ Referência de onde cada evento do GA4 é disparado no site. Todos passam pela f
 | Evento | Onde acontece (visual) | Onde está no código |
 |---|---|---|
 | `cta_fazer_simpatia` | Home → clique no botão "Fazer uma Simpatia →" (hero, topo da página) | `src/components/HeroCta.tsx` |
-| `ritual_view` | Página do Congelador → carregou a página (automático, sem precisar clicar em nada) | `src/app/congelador/page.tsx` |
-| `ritual_start` | Página do Congelador → clique no botão "+ Adicionar pedido" (abre o modal amarelo) | `src/app/congelador/page.tsx` |
-| `ritual_submit` | Modal "Novo pedido pro congelador" → clique em "Congelar 🧊" (dispara antes de salvar) | `src/app/congelador/page.tsx` |
-| `ritual_complete` | Mesmo botão "Congelar 🧊" → dispara depois que salvou com sucesso (aparece o toast "Pedido congelado ❄️") | `src/app/congelador/page.tsx` |
-| `ritual_open_saved` | Página do Congelador → clique num post-it já existente na prateleira (abre o modal de detalhe) — mede abertura de um pedido salvo, não necessariamente retorno ao site em outra sessão | `src/app/congelador/page.tsx` |
-| `ritual_unfreeze` | Modal de detalhe de um pedido ativo → clique em "Descongelar" / finalizar | `src/app/congelador/page.tsx` |
+| `ritual_view` | Carregou a página do ritual (automático, sem precisar clicar em nada) | `src/app/congelador/page.tsx`, `src/app/simpatias/conquistar/page.tsx` |
+| `ritual_start` | Clique no botão de adicionar (abre o modal) | idem |
+| `ritual_submit` | Clique em confirmar dentro do modal (dispara antes de salvar) | idem |
+| `ritual_complete` | Mesmo botão de confirmar → dispara depois que salvou com sucesso | idem |
+| `ritual_open_saved` | Clique num post-it/pote já existente (abre o modal de detalhe) — mede abertura de um pedido salvo, não necessariamente retorno ao site em outra sessão | idem |
+| `ritual_unfreeze` | Modal de detalhe de um pedido ativo → clique em finalizar (nome genérico mantido entre rituais pra comparar o funil) | idem |
+
+Todos os eventos acima carregam `{ ritual_type: "congelador" }` ou `{ ritual_type: "mel_pimenta" }` conforme a página. Os dois rituais compartilham a mesma tabela `pedidos` no Supabase, filtrando por `ritual_type`.
 | `sign_up` | Página de Criar conta (`/signup`) → clique em "Criar conta" (form) ou em "Continuar com Google/Facebook" | `src/components/AuthForm.tsx` |
 | `login` | Página de Entrar (`/login`) → clique em "Entrar" (form) ou em "Continuar com Google/Facebook" | `src/components/AuthForm.tsx` |
 
@@ -23,7 +25,7 @@ Referência de onde cada evento do GA4 é disparado no site. Todos passam pela f
 
 ## Convenção pra novos eventos
 
-Sempre que um novo ritual for criado (Mel e Pimenta, Canela), repetir o mesmo padrão de nomes trocando só o `ritual_type`:
-- `ritual_view`, `ritual_start`, `ritual_submit`, `ritual_complete` com `{ ritual_type: "mel_e_pimenta" }` ou `{ ritual_type: "canela" }`
+Sempre que um novo ritual for criado (ex: Canela), repetir o mesmo padrão de nomes trocando só o `ritual_type`:
+- `ritual_view`, `ritual_start`, `ritual_submit`, `ritual_complete`, `ritual_open_saved`, `ritual_unfreeze` com `{ ritual_type: "canela" }`
 
 Nunca mandar o texto do pedido em si como parâmetro — só metadados seguros (tipo do ritual, método de login, etc.).
