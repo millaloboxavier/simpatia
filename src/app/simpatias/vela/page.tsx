@@ -315,7 +315,6 @@ export default function VelaPage() {
 
         <div className="freezer-layout">
           <div className="freezer-unit theme-vela">
-            <div className="freezer-handle"></div>
             <div className="freezer-top">
               <div className="label">🕯️ Velas acesas</div>
               <button className="add-note-btn" disabled={!userId} onClick={openWizard}>

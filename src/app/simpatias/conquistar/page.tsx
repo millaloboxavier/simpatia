@@ -196,7 +196,6 @@ export default function ConquistarPage() {
 
         <div className="freezer-layout">
           <div className="freezer-unit theme-mel">
-            <div className="freezer-handle"></div>
             <div className="freezer-top">
               <div className="label">🍯 Pote de mel e pimenta — selados</div>
               <button

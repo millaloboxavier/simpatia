@@ -196,7 +196,6 @@ export default function AtrairPage() {
 
         <div className="freezer-layout">
           <div className="freezer-unit theme-canela">
-            <div className="freezer-handle"></div>
             <div className="freezer-top">
               <div className="label">✨ Canelas sopradas — ativas</div>
               <button
