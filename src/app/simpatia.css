@@ -292,6 +292,108 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .theme-canela .shelf-label{ background:var(--verde-feitico); color:var(--creme-vela); }
 .theme-canela .empty-shelf{ color:var(--verde-feitico); }
 .theme-canela .hint{ color:var(--verde-feitico); }
+
+/* Tema "vela" reaproveitando a estrutura do widget do congelador */
+.freezer-unit.theme-vela{
+  background:var(--roxo-penumbra); border-color:rgba(249,213,193,0.2);
+}
+.theme-vela .freezer-handle{
+  background:linear-gradient(180deg, var(--branco-estrela), var(--creme-desejo));
+  box-shadow:0 0 14px rgba(249,213,193,0.5);
+}
+.theme-vela .freezer-top .label{ color:var(--creme-desejo); }
+.theme-vela .shelf{ background:rgba(249,239,231,0.05); border-color:rgba(249,239,231,0.1); }
+.theme-vela .shelf-label{ background:var(--roxo-feitico); color:var(--creme-vela); }
+.theme-vela .empty-shelf{ color:rgba(249,239,231,0.7); }
+.theme-vela .hint{ color:rgba(249,239,231,0.7); }
+
+/* Vela: hero com efeito de digitação */
+.vela-hero-title{ min-height: 2.2em; }
+.vela-typed{ color:var(--acento); }
+.vela-cursor{ display:inline-block; margin-left:2px; color:var(--acento); animation:velaBlink 1s step-end infinite; }
+@keyframes velaBlink{ 50%{ opacity:0; } }
+
+/* Vela: cartão da vela na prateleira */
+.vela-shelf{ align-content:flex-start; }
+.vela-candle{
+  width:150px; min-height:120px; border-radius:12px; padding:14px;
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px;
+  cursor:pointer; box-shadow:0 8px 16px rgba(0,0,0,0.22); position:relative;
+  transition:transform 0.18s ease;
+}
+.vela-candle:hover{ transform:translateY(-3px); }
+.vela-flame{ font-size:22px; }
+.vela-txt{
+  font-family:'Caveat',cursive; font-size:15.5px; line-height:1.25; color:#3d3110;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.vela-remaining{
+  font-family:'Sora',sans-serif; font-size:10.5px; font-weight:700; color:var(--ink-soft);
+  background:rgba(255,255,255,0.6); padding:2px 8px; border-radius:100px;
+}
+.vela-candle.vela-branca{ background:var(--branco-estrela); }
+.vela-candle.vela-verde{ background:var(--verde-sorte); }
+.vela-candle.vela-rosa{ background:var(--creme-desejo); }
+.vela-candle.vela-roxa{ background:var(--lilas-misterio); }
+
+/* Vela: detalhe no modal */
+.detail-note-preview.vela-detail.vela-branca{ background:var(--branco-estrela); }
+.detail-note-preview.vela-detail.vela-verde{ background:var(--verde-sorte); }
+.detail-note-preview.vela-detail.vela-rosa{ background:var(--creme-desejo); }
+.detail-note-preview.vela-detail.vela-roxa{ background:var(--lilas-misterio); }
+
+/* Vela: modal mais largo pro wizard */
+.modal.modal-wide{ max-width:560px; }
+
+/* Vela: grid de categorias */
+.vela-category-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.vela-category-card{
+  text-align:left; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px;
+  cursor:pointer; transition:border-color 0.15s ease, transform 0.15s ease;
+}
+.vela-category-card:hover{ border-color:var(--acento); transform:translateY(-2px); }
+.vela-category-label{ font-weight:700; font-size:14px; color:var(--ink); margin-bottom:4px; }
+.vela-category-desc{ font-size:12.5px; color:var(--ink-soft); line-height:1.4; }
+
+/* Vela: grid de cores */
+.vela-color-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
+.vela-color-card{
+  display:flex; flex-direction:column; align-items:flex-start; gap:4px;
+  background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px;
+  cursor:pointer; text-align:left; transition:border-color 0.15s ease, transform 0.15s ease;
+}
+.vela-color-card:hover{ border-color:var(--acento); transform:translateY(-2px); }
+.vela-color-swatch{ width:22px; height:22px; border-radius:50%; box-shadow:inset 0 0 0 1.5px rgba(0,0,0,0.1); }
+.vela-color-card.vela-branca .vela-color-swatch{ background:var(--branco-estrela); }
+.vela-color-card.vela-verde .vela-color-swatch{ background:var(--verde-sorte); }
+.vela-color-card.vela-rosa .vela-color-swatch{ background:var(--creme-desejo); }
+.vela-color-card.vela-roxa .vela-color-swatch{ background:var(--lilas-misterio); }
+.vela-color-label{ font-weight:700; font-size:14px; color:var(--ink); }
+.vela-color-desc{ font-size:12.5px; color:var(--ink-soft); }
+
+/* Vela: interação de acender */
+.vela-light-stage{
+  position:relative; height:200px; background:var(--roxo-penumbra); border-radius:16px;
+  display:flex; align-items:flex-end; justify-content:center; padding-bottom:24px; margin:14px 0; overflow:hidden;
+}
+.vela-candle-big{
+  width:34px; height:90px; border-radius:6px 6px 3px 3px; position:relative;
+}
+.vela-candle-big.vela-branca{ background:var(--branco-estrela); }
+.vela-candle-big.vela-verde{ background:var(--verde-sorte); }
+.vela-candle-big.vela-rosa{ background:var(--creme-desejo); }
+.vela-candle-big.vela-roxa{ background:var(--lilas-misterio); }
+.vela-wick-zone{
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+}
+.vela-flame-big{ font-size:26px; animation:velaFlicker 0.6s ease-in-out infinite alternate; }
+@keyframes velaFlicker{ from{ transform:scale(1) rotate(-2deg); } to{ transform:scale(1.08) rotate(2deg); } }
+.vela-match{
+  position:absolute; bottom:24px; right:40px; font-size:28px; cursor:grab; touch-action:none;
+  filter:drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+}
+.vela-match:active{ cursor:grabbing; }
 .add-note-btn{
   background:var(--acento); color:var(--creme-vela); border:none; border-radius:12px;
   padding:11px 18px; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;

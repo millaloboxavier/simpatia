@@ -31,6 +31,9 @@ antes. Siga na ordem.
 5. Abra uma **New query** de novo, copie o conteúdo de
    [`supabase/mel_pimenta.sql`](./supabase/mel_pimenta.sql) e rode também. Isso adiciona suporte
    a múltiplos rituais na tabela `pedidos` (necessário pra Simpatia do Mel e Pimenta funcionar).
+6. Abra uma **New query** de novo, copie o conteúdo de
+   [`supabase/vela.sql`](./supabase/vela.sql) e rode também. Isso adiciona o ritual `vela` à
+   lista de rituais permitidos (necessário pra Simpatia da Vela funcionar).
 
 ### 1.2. Pegar as chaves de API
 
@@ -158,6 +161,7 @@ supabase/
   schema.sql       → tabela `pedidos` (Simpatia do Congelador) e regras de segurança
   blog_cms.sql     → tabelas `posts` e `authors` (CMS do blog) e regras de segurança
   mel_pimenta.sql  → coluna `ritual_type` em `pedidos` (Simpatia do Mel e Pimenta)
+  vela.sql         → adiciona 'vela' à lista de rituais permitidos (Simpatia da Vela)
 ```
 
 ## Próximos passos sugeridos

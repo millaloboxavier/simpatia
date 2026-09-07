@@ -19,6 +19,7 @@ const RITUAL_INFO: Record<string, { icon: string; href: string }> = {
   congelador: { icon: "🧊", href: "/congelador" },
   mel_pimenta: { icon: "🍯", href: "/simpatias/conquistar" },
   canela: { icon: "✨", href: "/simpatias/atrair" },
+  vela: { icon: "🕯️", href: "/simpatias/vela" },
 };
 
 function daysFrozen(p: Pedido) {

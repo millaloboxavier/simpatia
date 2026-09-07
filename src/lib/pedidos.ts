@@ -10,3 +10,10 @@ export function daysFrozen(createdAt: string, finalizedAt: string | null, status
   const start = new Date(createdAt).getTime();
   return Math.max(0, Math.round((calendarDay(end) - calendarDay(start)) / DAY_MS));
 }
+
+const HOUR_MS = 60 * 60 * 1000;
+
+export function hoursRemaining(createdAt: string, totalHours: number) {
+  const elapsedMs = Date.now() - new Date(createdAt).getTime();
+  return Math.max(0, totalHours - elapsedMs / HOUR_MS);
+}

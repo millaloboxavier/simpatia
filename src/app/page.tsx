@@ -137,6 +137,15 @@ export default async function Home() {
             <p>Simpatia da canela para atrair dinheiro, oportunidades e abundância.</p>
             <span className="go-v2">Quero atrair →</span>
           </Link>
+          <Link href="/simpatias/vela" className="simpatia-card card-lilas">
+            <span className="tag-v2">Qualquer intenção</span>
+            <div className="icon-v2" style={{ fontSize: 40, lineHeight: 1, display: "flex", alignItems: "center" }}>
+              🕯️
+            </div>
+            <h3>Quero acender uma vela</h3>
+            <p>Simpatia da vela, para amor, caminhos, agradecimento ou o que você tiver em mente.</p>
+            <span className="go-v2">Quero acender →</span>
+          </Link>
         </div>
       </section>
 
