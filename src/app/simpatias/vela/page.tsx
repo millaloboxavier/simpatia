@@ -313,16 +313,18 @@ export default function VelaPage() {
               {loading ? (
                 <div className="empty-shelf">Carregando...</div>
               ) : userId === null ? (
-                <div className="vela-item note-example">
-                  <span className="note-example-tag">Exemplo</span>
-                  <div className="vela-mini-stage">
-                    <div className="vela-candle-big vela-mini-big vela-branca">
-                      <div className="vela-wick-zone">
-                        <div className="vela-flame-big vela-mini-flame"></div>
+                <div className="vela-shelf-empty-example">
+                  <div className="vela-item note-example vela-example-item">
+                    <span className="note-example-tag">Exemplo</span>
+                    <div className="vela-mini-stage vela-example-stage">
+                      <div className="vela-candle-big vela-example-big vela-branca">
+                        <div className="vela-wick-zone">
+                          <div className="vela-flame-big vela-example-flame"></div>
+                        </div>
                       </div>
                     </div>
+                    <div className="vela-txt">que aquela oportunidade dê certo...</div>
                   </div>
-                  <div className="vela-txt">que aquela oportunidade dê certo...</div>
                 </div>
               ) : ativas.length === 0 ? (
                 <div className="empty-shelf">Nenhuma vela acesa agora. Acenda a primeira pra começar.</div>

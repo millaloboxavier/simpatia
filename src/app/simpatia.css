@@ -417,6 +417,21 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .vela-candle-big.vela-mini-big::before{ top:-4px; height:5px; }
 .vela-mini-big .vela-wick-zone{ top:-15px; width:20px; height:20px; }
 .vela-mini-flame{ width:8px; height:12px; box-shadow:0 0 8px 3px rgba(255,180,60,0.55), 0 0 16px 6px rgba(255,140,0,0.25); }
+
+/* Vela: exemplo maior e centralizado quando não está logado */
+.vela-shelf-empty-example{ width:100%; display:flex; align-items:center; justify-content:center; padding:26px 0; }
+.vela-example-item{ width:220px; cursor:default; opacity:1; }
+.vela-example-item:hover{ background:none; transform:none; }
+.vela-example-item .note-example-tag{
+  position:static; display:inline-block; margin-bottom:12px;
+  background:rgba(255,255,255,0.18); color:var(--creme-desejo);
+}
+.vela-example-stage{ height:80px; margin-bottom:8px; }
+.vela-candle-big.vela-example-big{ width:26px; height:70px; border-radius:6px 6px 3px 3px; }
+.vela-candle-big.vela-example-big::before{ height:8px; }
+.vela-example-big .vela-wick-zone{ top:-22px; width:30px; height:30px; }
+.vela-example-flame{ width:16px; height:22px; box-shadow:0 0 14px 5px rgba(255,180,60,0.6), 0 0 28px 10px rgba(255,140,0,0.28); }
+.vela-example-item .vela-txt{ font-size:17px; }
 .add-note-btn{
   background:var(--acento); color:var(--creme-vela); border:none; border-radius:12px;
   padding:11px 18px; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;
