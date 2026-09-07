@@ -453,6 +453,13 @@ export default function VelaPage() {
               ✕
             </button>
             <h3>Sua vela</h3>
+            <div className="vela-detail-stage">
+              <div className={`vela-candle-big vela-detail-big ${detail.color}`}>
+                <div className="vela-wick-zone">
+                  {statusOf(detail) === "acesa" && <div className="vela-flame-big vela-detail-flame"></div>}
+                </div>
+              </div>
+            </div>
             <div className={`detail-note-preview vela-detail ${detail.color}`}>{detail.text}</div>
             <div className="detail-days">
               {statusOf(detail) === "apagada" ? (
@@ -637,7 +644,7 @@ function LightStage({
       <div className="vela-light-stage">
         <div className={`vela-candle-big vela-${colorKey} ${lit ? "is-lit" : ""}`}>
           <div ref={wickRef} className="vela-wick-zone">
-            {lit && <div className="vela-flame-big">🔥</div>}
+            {lit && <div className="vela-flame-big"></div>}
           </div>
         </div>
         {!lit && (

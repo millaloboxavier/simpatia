@@ -379,21 +379,41 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .vela-candle-big{
   width:34px; height:90px; border-radius:6px 6px 3px 3px; position:relative;
 }
-.vela-candle-big.vela-branca{ background:var(--branco-estrela); }
-.vela-candle-big.vela-verde{ background:var(--verde-sorte); }
-.vela-candle-big.vela-rosa{ background:var(--creme-desejo); }
-.vela-candle-big.vela-roxa{ background:var(--lilas-misterio); }
+.vela-candle-big::before{
+  content:""; position:absolute; top:-8px; left:50%; transform:translateX(-50%);
+  width:2px; height:9px; background:#3a2a1a; border-radius:1px;
+}
+.vela-candle-big.vela-branca{ background:linear-gradient(180deg, #fff, var(--branco-estrela)); }
+.vela-candle-big.vela-verde{ background:linear-gradient(180deg, #d7e4bd, var(--verde-sorte)); }
+.vela-candle-big.vela-rosa{ background:linear-gradient(180deg, #fbe3d3, var(--creme-desejo)); }
+.vela-candle-big.vela-roxa{ background:linear-gradient(180deg, #ddc0dc, var(--lilas-misterio)); }
 .vela-wick-zone{
-  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  position:absolute; top:-26px; left:50%; transform:translateX(-50%);
   width:44px; height:44px; display:flex; align-items:center; justify-content:center;
 }
-.vela-flame-big{ font-size:26px; animation:velaFlicker 0.6s ease-in-out infinite alternate; }
-@keyframes velaFlicker{ from{ transform:scale(1) rotate(-2deg); } to{ transform:scale(1.08) rotate(2deg); } }
+.vela-flame-big{
+  position:relative; width:16px; height:24px;
+  background:radial-gradient(ellipse at 50% 75%, #fff8dc 0%, #ffd873 30%, #ff9d3c 65%, #ff5722 100%);
+  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+  box-shadow:0 0 14px 5px rgba(255,180,60,0.55), 0 0 30px 12px rgba(255,140,0,0.25);
+  animation:velaFlicker 0.6s ease-in-out infinite alternate;
+  transform-origin:50% 100%;
+}
+@keyframes velaFlicker{ from{ transform:scale(1) rotate(-3deg); } to{ transform:scale(1.08) rotate(3deg); } }
 .vela-match{
   position:absolute; bottom:24px; right:40px; font-size:28px; cursor:grab; touch-action:none;
   filter:drop-shadow(0 4px 6px rgba(0,0,0,0.4));
 }
 .vela-match:active{ cursor:grabbing; }
+
+/* Vela: vela grande no modal de detalhe */
+.vela-detail-stage{
+  position:relative; height:230px; background:var(--roxo-penumbra); border-radius:16px;
+  display:flex; align-items:flex-end; justify-content:center; padding-bottom:26px; margin-bottom:16px; overflow:hidden;
+}
+.vela-candle-big.vela-detail-big{ width:56px; height:150px; border-radius:9px 9px 4px 4px; }
+.vela-candle-big.vela-detail-big::before{ height:12px; }
+.vela-detail-flame{ width:24px; height:34px; box-shadow:0 0 20px 8px rgba(255,180,60,0.6), 0 0 42px 16px rgba(255,140,0,0.28); }
 .add-note-btn{
   background:var(--acento); color:var(--creme-vela); border:none; border-radius:12px;
   padding:11px 18px; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;
