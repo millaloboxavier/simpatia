@@ -174,93 +174,88 @@ export default function CongeladorPage() {
           }),
         }}
       />
-      <div className="ritual-top-grid">
-        <div>
-          <div className="freezer-header">
-            <h1>Simpatia do congelador: para dar um gelo no que está incomodando</h1>
-            <p>
-              Uma simpatia para &ldquo;congelar&rdquo; pensamentos, situações ou pessoas que estão te
-              tirando a paz e dar um tempo emocional enquanto tudo se acalma.
-            </p>
-          </div>
+      <div className="freezer-header">
+        <h1>Simpatia do congelador: para dar um gelo no que está incomodando</h1>
+        <p>
+          Uma simpatia para &ldquo;congelar&rdquo; pensamentos, situações ou pessoas que estão te
+          tirando a paz e dar um tempo emocional enquanto tudo se acalma.
+        </p>
+      </div>
 
-          {userId === null && (
-            <div className="auth-error" style={{ marginTop: 20 }}>
-              <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
-              <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
-                <Link href="/login?next=/congelador" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
-                  Entrar
-                </Link>
-                <Link href="/signup?next=/congelador" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
-                  Criar conta
-                </Link>
-              </div>
+      {userId === null && (
+        <div className="auth-error" style={{ marginTop: 20, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
+          <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+            <Link href="/login?next=/congelador" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
+              Entrar
+            </Link>
+            <Link href="/signup?next=/congelador" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
+              Criar conta
+            </Link>
+          </div>
+        </div>
+      )}
+
+      <div className="freezer-top" style={{ marginTop: 28 }}>
+        <div className="label">🧊 Congelador — ativos</div>
+        <button
+          className="add-note-btn"
+          disabled={!userId}
+          onClick={() => {
+            setNoteInput("");
+            setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
+            setShowAdd(true);
+            trackEvent("ritual_start", { ritual_type: "congelador" });
+          }}
+        >
+          + Adicionar pedido
+        </button>
+      </div>
+
+      <div className="freezer-illustration-frame">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/congelador.png"
+          alt=""
+          className="freezer-illustration-img"
+        />
+        <div className="freezer-illustration-shelf">
+          {loading ? (
+            <div className="empty-shelf">Carregando...</div>
+          ) : userId === null ? (
+            <div className="note color-amber note-example" style={{ "--r": "-2deg" } as React.CSSProperties}>
+              <div className="pin"></div>
+              <span className="note-example-tag">Exemplo</span>
+              <div className="txt">aquele climão com meu chefe...</div>
             </div>
+          ) : ativos.length === 0 ? (
+            <div className="empty-shelf">Vazio por enquanto. Adicione o primeiro pedido pra começar a congelar.</div>
+          ) : (
+            ativos.map((p) => {
+              const days = daysFrozen(p);
+              return (
+                <div
+                  key={p.id}
+                  className={`note ${p.color}`}
+                  style={{ "--r": `${p.rotation}deg` } as React.CSSProperties}
+                  onClick={() => {
+                    setDetailId(p.id);
+                    trackEvent("ritual_open_saved", { ritual_type: "congelador" });
+                  }}
+                >
+                  <div className="pin"></div>
+                  <div className="frost-overlay" style={{ opacity: frostOpacity(days) }}></div>
+                  <div className="txt">{p.text}</div>
+                  <div className="days-tag">
+                    {days} dia{days === 1 ? "" : "s"}
+                  </div>
+                </div>
+              );
+            })
           )}
         </div>
-
-        <div className="freezer-layout">
-          <div className="freezer-unit">
-            <div className="freezer-handle"></div>
-            <div className="freezer-top">
-              <div className="label">🧊 Congelador — ativos</div>
-              <button
-                className="add-note-btn"
-                disabled={!userId}
-                onClick={() => {
-                  setNoteInput("");
-                  setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
-                  setShowAdd(true);
-                  trackEvent("ritual_start", { ritual_type: "congelador" });
-                }}
-              >
-                + Adicionar pedido
-              </button>
-            </div>
-
-            <div className="shelf" style={{ minHeight: 230 }}>
-              <span className="shelf-label">Prateleira de cima</span>
-              {loading ? (
-                <div className="empty-shelf">Carregando...</div>
-              ) : userId === null ? (
-                <div className="note color-amber note-example" style={{ "--r": "-2deg" } as React.CSSProperties}>
-                  <div className="pin"></div>
-                  <span className="note-example-tag">Exemplo</span>
-                  <div className="txt">aquele climão com meu chefe...</div>
-                </div>
-              ) : ativos.length === 0 ? (
-                <div className="empty-shelf">Vazio por enquanto. Adicione o primeiro pedido pra começar a congelar.</div>
-              ) : (
-                ativos.map((p) => {
-                  const days = daysFrozen(p);
-                  return (
-                    <div
-                      key={p.id}
-                      className={`note ${p.color}`}
-                      style={{ "--r": `${p.rotation}deg` } as React.CSSProperties}
-                      onClick={() => {
-                        setDetailId(p.id);
-                        trackEvent("ritual_open_saved", { ritual_type: "congelador" });
-                      }}
-                    >
-                      <div className="pin"></div>
-                      <div className="frost-overlay" style={{ opacity: frostOpacity(days) }}></div>
-                      <div className="txt">{p.text}</div>
-                      <div className="days-tag">
-                        {days} dia{days === 1 ? "" : "s"}
-                      </div>
-                    </div>
-                  );
-                })
-              )}
-            </div>
-
-            <div className="freezer-foot">
-              <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>
-            </div>
-          </div>
-        </div>
       </div>
+      <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>
 
       {userId !== null && (
         <div className="freezer-stats-row">

@@ -262,8 +262,18 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
   flex-wrap:wrap;
 }
 .freezer-top .label{
-  color:var(--azul-abismo); font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--green-deep); font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
 }
+
+.freezer-illustration-frame{
+  position:relative; width:100%; margin-top:20px;
+}
+.freezer-illustration-img{ width:100%; height:auto; display:block; }
+.freezer-illustration-shelf{
+  position:absolute; top:34%; left:12%; right:12%; bottom:20%;
+  display:flex; flex-wrap:wrap; align-content:flex-start; gap:16px; padding:16px; overflow:auto;
+}
+.freezer-illustration-frame + .hint{ display:block; margin-top:14px; color:var(--ink-soft); }
 
 /* Tema "mel e pimenta" reaproveitando a estrutura do widget do congelador */
 .freezer-unit.theme-mel{
