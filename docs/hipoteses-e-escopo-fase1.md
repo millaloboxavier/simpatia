@@ -168,7 +168,7 @@ Referência rápida do que já existe no código versus o que este documento pla
 
 - ✅ Congelador — construído e funcional (fluxo completo, conta/privacidade, SEO + FAQ, analytics)
 - ✅ Amor/adoçamento (Mel e Pimenta) — construído e funcional (fluxo completo, conta/privacidade, SEO + FAQ, analytics)
-- ⏳ Prosperidade/trabalho (Canela) — placeholder no site, ainda não desenvolvido
+- ✅ Prosperidade/trabalho (Canela) — construído e funcional (fluxo completo, conta/privacidade, SEO + FAQ, analytics)
 - ✅ Blog com conteúdo SEO — implementado como CMS próprio (autoras convidadas publicam direto)
 - ✅ Eventos de analytics — `cta_fazer_simpatia`, `sign_up`, `pedido_criado` no GA4, mais Search Console para origem do tráfego orgânico
 - ⏳ Eventos de progresso dentro do ritual (avanço por etapas) e retorno pós-ritual ("e aí, funcionou?") — ainda não implementados, ficam como próximo passo de instrumentação quando os outros dois rituais forem construídos

@@ -125,8 +125,8 @@ export default async function Home() {
             <p>Simpatia do mel e pimenta, para fazer o crush se apaixonar.</p>
             <span className="go-v2">Quero conquistar →</span>
           </Link>
-          <Link href="/simpatias/atrair" className="simpatia-card card-sorte card-em-breve">
-            <span className="tag-v2 tag-em-breve">Em breve</span>
+          <Link href="/simpatias/atrair" className="simpatia-card card-sorte">
+            <span className="tag-v2">Atrair</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="icon-v2"
@@ -135,7 +135,7 @@ export default async function Home() {
             />
             <h3>Quero atrair coisa boa</h3>
             <p>Simpatia da canela para atrair dinheiro, oportunidades e abundância.</p>
-            <span className="go-v2">O Universo ainda está processando...</span>
+            <span className="go-v2">Quero atrair →</span>
           </Link>
         </div>
       </section>

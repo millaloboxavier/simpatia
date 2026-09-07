@@ -278,6 +278,20 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .theme-mel .shelf-label{ background:var(--roxo-feitico); color:var(--creme-vela); }
 .theme-mel .empty-shelf{ color:var(--roxo-feitico); }
 .theme-mel .hint{ color:var(--roxo-feitico); }
+
+/* Tema "canela" reaproveitando a estrutura do widget do congelador */
+.freezer-unit.theme-canela{
+  background:var(--verde-sorte); border-color:rgba(23,63,53,0.22);
+}
+.theme-canela .freezer-handle{
+  background:linear-gradient(180deg, var(--branco-estrela), var(--postit-amber));
+  box-shadow:0 0 14px rgba(188,198,158,0.6);
+}
+.theme-canela .freezer-top .label{ color:var(--verde-feitico); }
+.theme-canela .shelf{ background:rgba(23,63,53,0.06); border-color:rgba(23,63,53,0.12); }
+.theme-canela .shelf-label{ background:var(--verde-feitico); color:var(--creme-vela); }
+.theme-canela .empty-shelf{ color:var(--verde-feitico); }
+.theme-canela .hint{ color:var(--verde-feitico); }
 .add-note-btn{
   background:var(--acento); color:var(--creme-vela); border:none; border-radius:12px;
   padding:11px 18px; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;
