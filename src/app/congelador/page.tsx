@@ -199,31 +199,27 @@ export default function CongeladorPage() {
           )}
         </div>
 
-        <div>
-          <div className="freezer-top">
-            <div className="label">🧊 Congelador — ativos</div>
-            <button
-              className="add-note-btn"
-              disabled={!userId}
-              onClick={() => {
-                setNoteInput("");
-                setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
-                setShowAdd(true);
-                trackEvent("ritual_start", { ritual_type: "congelador" });
-              }}
-            >
-              + Adicionar pedido
-            </button>
-          </div>
+        <div className="freezer-layout">
+          <div className="freezer-unit">
+            <div className="freezer-handle"></div>
+            <div className="freezer-top">
+              <div className="label">🧊 Congelador — ativos</div>
+              <button
+                className="add-note-btn"
+                disabled={!userId}
+                onClick={() => {
+                  setNoteInput("");
+                  setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
+                  setShowAdd(true);
+                  trackEvent("ritual_start", { ritual_type: "congelador" });
+                }}
+              >
+                + Adicionar pedido
+              </button>
+            </div>
 
-          <div className="freezer-illustration-frame">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/congelador.png"
-              alt=""
-              className="freezer-illustration-img"
-            />
-            <div className="freezer-illustration-shelf">
+            <div className="shelf" style={{ minHeight: 230 }}>
+              <span className="shelf-label">Prateleira de cima</span>
               {loading ? (
                 <div className="empty-shelf">Carregando...</div>
               ) : userId === null ? (
@@ -258,8 +254,11 @@ export default function CongeladorPage() {
                 })
               )}
             </div>
+
+            <div className="freezer-foot">
+              <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>
+            </div>
           </div>
-          <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>
         </div>
       </div>
 
