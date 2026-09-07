@@ -275,8 +275,8 @@ export default function ConquistarPage() {
           queria que reparasse mais em você, ou só uma aproximação que você gostaria de adoçar? A
           simpatia do mel e pimenta é um ritual popular de conquista, usado por quem deseja atrair
           atenção e afeto de um jeito simbólico. No Simpatia.me, você faz esse gesto de forma
-          virtual, privada, sem precisar explicar pra ninguém por que tem mel e pimenta na sua
-          geladeira.
+          virtual, privada, sem precisar explicar pra ninguém por que tem um pote de mel e
+          pimenta escondido no armário.
         </p>
 
         <h2>O que é a simpatia do mel e pimenta?</h2>
