@@ -329,7 +329,13 @@ export default function VelaPage() {
               ) : userId === null ? (
                 <div className="vela-candle vela-branca note-example">
                   <span className="note-example-tag">Exemplo</span>
-                  <div className="vela-flame">🕯️</div>
+                  <div className="vela-mini-stage">
+                    <div className="vela-candle-big vela-mini-big">
+                      <div className="vela-wick-zone">
+                        <div className="vela-flame-big vela-mini-flame"></div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="vela-txt">que aquela oportunidade dê certo...</div>
                 </div>
               ) : ativas.length === 0 ? (
@@ -346,7 +352,13 @@ export default function VelaPage() {
                         trackEvent("ritual_open_saved", { ritual_type: "vela" });
                       }}
                     >
-                      <div className="vela-flame">🕯️</div>
+                      <div className="vela-mini-stage">
+                        <div className="vela-candle-big vela-mini-big">
+                          <div className="vela-wick-zone">
+                            <div className="vela-flame-big vela-mini-flame"></div>
+                          </div>
+                        </div>
+                      </div>
                       <div className="vela-txt">{p.text}</div>
                       <div className="vela-remaining">{formatRemaining(remaining)}</div>
                     </div>
