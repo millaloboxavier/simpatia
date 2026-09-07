@@ -178,20 +178,6 @@ export default function AtrairPage() {
               abundância — com uma canela virtual, sem sujar a casa de verdade.
             </p>
           </div>
-
-          {userId === null && (
-            <div className="auth-error" style={{ marginTop: 20 }}>
-              <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
-              <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
-                <Link href="/login?next=/simpatias/atrair" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
-                  Entrar
-                </Link>
-                <Link href="/signup?next=/simpatias/atrair" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
-                  Criar conta
-                </Link>
-              </div>
-            </div>
-          )}
         </div>
 
         <div className="freezer-layout">
@@ -247,6 +233,20 @@ export default function AtrairPage() {
                 })
               )}
             </div>
+
+            {userId === null && (
+              <div className="auth-error auth-error-inset">
+                <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
+                <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
+                  <Link href="/login?next=/simpatias/atrair" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
+                    Entrar
+                  </Link>
+                  <Link href="/signup?next=/simpatias/atrair" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
+                    Criar conta
+                  </Link>
+                </div>
+              </div>
+            )}
 
             <div className="freezer-foot">
               <span className="hint">Toque numa intenção para ver os detalhes ou finalizar.</span>

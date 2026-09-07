@@ -183,20 +183,6 @@ export default function CongeladorPage() {
               tirando a paz e dar um tempo emocional enquanto tudo se acalma.
             </p>
           </div>
-
-          {userId === null && (
-            <div className="auth-error" style={{ marginTop: 20 }}>
-              <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
-              <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
-                <Link href="/login?next=/congelador" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
-                  Entrar
-                </Link>
-                <Link href="/signup?next=/congelador" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
-                  Criar conta
-                </Link>
-              </div>
-            </div>
-          )}
         </div>
 
         <div className="freezer-layout">
@@ -254,6 +240,20 @@ export default function CongeladorPage() {
                 })
               )}
             </div>
+
+            {userId === null && (
+              <div className="auth-error auth-error-inset">
+                <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
+                <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
+                  <Link href="/login?next=/congelador" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>
+                    Entrar
+                  </Link>
+                  <Link href="/signup?next=/congelador" className="btn btn-dark" style={{ whiteSpace: "nowrap" }}>
+                    Criar conta
+                  </Link>
+                </div>
+              </div>
+            )}
 
             <div className="freezer-foot">
               <span className="hint">Toque num post-it para ver os detalhes ou descongelar.</span>

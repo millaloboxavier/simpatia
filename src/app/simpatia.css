@@ -619,6 +619,10 @@ footer{
   background:rgba(108,43,107,0.1); color:var(--ember-dark); border-radius:10px; padding:10px 14px;
   font-size:13px; margin-bottom:16px;
 }
+.auth-error-inset{
+  background:rgba(255,255,255,0.92); color:var(--ink); border-radius:12px; padding:14px 16px;
+  margin:8px 0 0; position:relative; z-index:2;
+}
 
 /* ---------- Blog ---------- */
 .blog-post{padding:56px 0 100px; max-width:680px; margin:0 auto;}
