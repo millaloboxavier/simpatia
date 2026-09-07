@@ -33,6 +33,7 @@
   --roxo-penumbra: #311431;
   --roxo-feitico: #6C2B6B;
   --lilas-misterio: #CDA1CC;
+  --lilas-suave: #EDD9ED;
   /* Azuis */
   --azul-abismo: #142B31;
   --azul-mare: #307687;
@@ -308,7 +309,7 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .theme-vela .hint{ color:rgba(249,239,231,0.7); }
 
 /* Vela: hero com efeito de digitação */
-.vela-hero-title{ min-height: 2.2em; }
+.vela-hero-title{ min-height: 3.7em; }
 .vela-typed{ color:var(--acento); }
 .vela-cursor{ display:inline-block; margin-left:2px; color:var(--acento); animation:velaBlink 1s step-end infinite; }
 @keyframes velaBlink{ 50%{ opacity:0; } }
@@ -635,8 +636,15 @@ footer{
   font-size:13px; margin-bottom:16px;
 }
 .auth-error-inset{
-  background:rgba(255,255,255,0.92); color:var(--ink); border-radius:12px; padding:14px 16px;
+  background:var(--creme-vela); color:var(--ink); border-radius:12px; padding:14px 16px;
   margin:8px 0 0; position:relative; z-index:2;
+}
+.auth-error-inset.shake{ animation:authErrorShake 0.5s; }
+@keyframes authErrorShake{
+  10%,90%{ transform:translateX(-1px); }
+  20%,80%{ transform:translateX(2px); }
+  30%,50%,70%{ transform:translateX(-4px); }
+  40%,60%{ transform:translateX(4px); }
 }
 
 /* ---------- Blog ---------- */
@@ -828,8 +836,10 @@ header.nav.nav-v2{
 }
 .simpatia-card:hover .go-v2{ background:var(--green-deep-2); }
 .simpatia-card.card-lilas{ background:var(--lilas-misterio); }
-.simpatia-card.card-sorte{ background:var(--verde-sorte); }
+.simpatia-card.card-lilas-suave{ background:var(--lilas-suave); }
+.simpatia-card.card-sorte{ background:var(--verde-ervas); }
 .simpatia-card.card-azul{ background:var(--azul-intuicao); }
+.simpatia-card.card-creme{ background:var(--creme-desejo); }
 
 .simpatia-card.card-em-breve{ opacity:0.72; cursor:default; }
 .simpatia-card.card-em-breve:hover{ transform:none; box-shadow:none; }

@@ -131,8 +131,14 @@ export default function VelaPage() {
   const [saving, setSaving] = useState(false);
 
   const [detailId, setDetailId] = useState<string | null>(null);
+  const [shakeAuth, setShakeAuth] = useState(false);
 
   const heroTyped = useTypewriter(HERO_PHRASES);
+
+  function triggerAuthShake() {
+    setShakeAuth(true);
+    setTimeout(() => setShakeAuth(false), 500);
+  }
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUserId(data.user?.id ?? null));
@@ -292,9 +298,15 @@ export default function VelaPage() {
               saber se acredita. Só precisa ter alguma coisa em mente.
             </p>
             <div style={{ marginTop: 18 }}>
-              <button className="btn-v2" disabled={!userId} onClick={openWizard}>
-                Acender minha vela →
-              </button>
+              {userId ? (
+                <button className="btn-v2" onClick={openWizard}>
+                  Acender minha vela →
+                </button>
+              ) : (
+                <Link href="/signup?next=/simpatias/vela" className="btn-v2">
+                  Acender minha vela →
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -303,7 +315,16 @@ export default function VelaPage() {
           <div className="freezer-unit theme-vela">
             <div className="freezer-top">
               <div className="label">🕯️ Velas acesas</div>
-              <button className="add-note-btn" disabled={!userId} onClick={openWizard}>
+              <button
+                className="add-note-btn"
+                onClick={() => {
+                  if (!userId) {
+                    triggerAuthShake();
+                    return;
+                  }
+                  openWizard();
+                }}
+              >
                 + Acender vela
               </button>
             </div>
@@ -356,7 +377,7 @@ export default function VelaPage() {
             </div>
 
             {userId === null && (
-              <div className="auth-error auth-error-inset">
+              <div className={`auth-error auth-error-inset ${shakeAuth ? "shake" : ""}`}>
                 <span>Crie sua conta pra guardar suas velas com segurança — seu conteúdo é pessoal.</span>
                 <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
                   <Link href="/login?next=/simpatias/vela" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>

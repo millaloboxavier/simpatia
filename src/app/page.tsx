@@ -113,7 +113,7 @@ export default async function Home() {
             <p>Simpatia do congelador para impedir ou afastar pessoa, situação ou acontecimento indesejado.</p>
             <span className="go-v2">Quero congelar →</span>
           </Link>
-          <Link href="/simpatias/conquistar" className="simpatia-card card-lilas">
+          <Link href="/simpatias/conquistar" className="simpatia-card card-lilas-suave">
             <span className="tag-v2">Conquistar</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -137,11 +137,14 @@ export default async function Home() {
             <p>Simpatia da canela para atrair dinheiro, oportunidades e abundância.</p>
             <span className="go-v2">Quero atrair →</span>
           </Link>
-          <Link href="/simpatias/vela" className="simpatia-card card-lilas">
+          <Link href="/simpatias/vela" className="simpatia-card card-creme">
             <span className="tag-v2">Qualquer intenção</span>
-            <div className="icon-v2" style={{ fontSize: 40, lineHeight: 1, display: "flex", alignItems: "center" }}>
-              🕯️
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="icon-v2"
+              src="https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/simpatia-vela.png"
+              alt=""
+            />
             <h3>Quero acender uma vela</h3>
             <p>Simpatia da vela, para amor, caminhos, agradecimento ou o que você tiver em mente.</p>
             <span className="go-v2">Quero acender →</span>

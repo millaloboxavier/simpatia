@@ -42,6 +42,12 @@ export default function AtrairPage() {
 
   const [detailId, setDetailId] = useState<string | null>(null);
   const [celebrate, setCelebrate] = useState<{ text: string; days: number } | null>(null);
+  const [shakeAuth, setShakeAuth] = useState(false);
+
+  function triggerAuthShake() {
+    setShakeAuth(true);
+    setTimeout(() => setShakeAuth(false), 500);
+  }
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUserId(data.user?.id ?? null));
@@ -186,8 +192,11 @@ export default function AtrairPage() {
               <div className="label">✨ Canelas sopradas — ativas</div>
               <button
                 className="add-note-btn"
-                disabled={!userId}
                 onClick={() => {
+                  if (!userId) {
+                    triggerAuthShake();
+                    return;
+                  }
                   setNoteInput("");
                   setNotePlaceholder(NOTE_PLACEHOLDERS[Math.floor(Math.random() * NOTE_PLACEHOLDERS.length)]);
                   setShowAdd(true);
@@ -235,7 +244,7 @@ export default function AtrairPage() {
             </div>
 
             {userId === null && (
-              <div className="auth-error auth-error-inset">
+              <div className={`auth-error auth-error-inset ${shakeAuth ? "shake" : ""}`}>
                 <span>Crie sua conta pra guardar seus pedidos com segurança — seu conteúdo é pessoal.</span>
                 <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
                   <Link href="/login?next=/simpatias/atrair" className="btn btn-ghost" style={{ whiteSpace: "nowrap" }}>

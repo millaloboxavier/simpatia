@@ -26,6 +26,7 @@ Referência dos códigos hex usados no site, espelhando as variáveis CSS em `sr
 | Roxo Penumbra | `#311431` | `--roxo-penumbra` |
 | Roxo Feitiço | `#6C2B6B` | `--roxo-feitico` |
 | Lilás Mistério | `#CDA1CC` | `--lilas-misterio` |
+| Lilás Suave | `#EDD9ED` | `--lilas-suave` |
 
 ### Azuis
 | Nome | Hex | Variável CSS |
