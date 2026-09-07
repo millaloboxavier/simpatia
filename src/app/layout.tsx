@@ -9,9 +9,9 @@ const SITE_URL = "https://simpatia.me";
 const GA_MEASUREMENT_ID = "G-H151JBDKRN";
 const FAVICON_URL =
   "https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/favicon.png";
-const TITLE = "Simpatia | Magia virtual para os dramas da vida real";
+const TITLE = "Simpatias online | Magia virtual para os dramas da vida real";
 const DESCRIPTION =
-  "Simpatias online para aqueles momentos em que uma ajudinha do Universo cairia bem. Faça a Simpatia do Congelador, do Mel com Pimenta ou da Canela — tudo direto do navegador.";
+  "Faça simpatias online e rituais virtuais para amor, prosperidade, afastamento e os dramas da vida real. Escolha uma simpatia e faça na hora.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

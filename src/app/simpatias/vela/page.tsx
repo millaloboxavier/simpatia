@@ -286,7 +286,7 @@ export default function VelaPage() {
         <div>
           <div className="freezer-header">
             <h1 className="vela-hero-title">
-              Acenda uma vela para <span className="vela-typed">{heroTyped}</span>
+              Acenda uma vela virtual para <span className="vela-typed">{heroTyped}</span>
               <span className="vela-cursor">|</span>
             </h1>
             <p>
@@ -294,8 +294,9 @@ export default function VelaPage() {
               merece uma vela.
             </p>
             <p style={{ marginTop: 6 }}>
-              Faça seu pedido, escolha a sua e deixe uma pequena chama acesa por isso. Não precisa
-              saber se acredita. Só precisa ter alguma coisa em mente.
+              Aqui você pode acender uma vela virtual online para um pedido, agradecimento ou
+              intenção: seja para amor, trabalho, proteção, novos caminhos ou aquilo que estiver
+              ocupando espaço na sua cabeça.
             </p>
             <div style={{ marginTop: 18 }}>
               {userId ? (
@@ -478,6 +479,19 @@ export default function VelaPage() {
           pequenos rituais simbólicos. Não existe garantia de resultado. Infelizmente o universo
           ainda não oferece SLA.
         </p>
+
+        <h2>Talvez seu pedido tenha uma simpatia mais específica</h2>
+        <ul className="vela-related-list">
+          <li>
+            <Link href="/simpatias/atrair">Quero atrair prosperidade → Simpatia da Canela</Link>
+          </li>
+          <li>
+            <Link href="/simpatias/conquistar">Quero uma forcinha no amor → Mel e Pimenta</Link>
+          </li>
+          <li>
+            <Link href="/congelador">Quero afastar alguma coisa → Congelador</Link>
+          </li>
+        </ul>
       </div>
 
       {/* Modal: detalhe da vela */}

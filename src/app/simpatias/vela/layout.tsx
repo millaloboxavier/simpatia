@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Acenda uma Vela Virtual: Simpatia para Qualquer Intenção | Simpatia",
+  title: "Vela virtual: acenda uma vela online para seu pedido | Simpatia",
   description:
     "Escolha uma intenção, escreva seu pedido e acenda uma vela virtual — amor, caminhos, paz ou agradecimento. Ela fica simbolicamente acesa por 24 horas.",
 };

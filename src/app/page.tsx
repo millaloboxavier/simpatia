@@ -91,14 +91,12 @@ export default async function Home() {
       </section>
 
       <section className="showcase-v2" id="vitrine">
-        <h2>O que você quer pedir para o Universo?</h2>
+        <div className="eyebrow-v2">✦ O que você quer pedir ao universo?</div>
+        <h2>Simpatias online para fazer agora</h2>
         <p className="lead-v2">
           Crush não responde? Reunião marcada sexta às 17h? Dinheiro evaporando antes do fim do
           mês?
         </p>
-        <div className="eyebrow-v2">
-          ✦ Tem uma <em>simpatia</em> pra isso
-        </div>
 
         <div className="simpatia-cards">
           <Link href="/congelador" className="simpatia-card card-azul">

@@ -662,6 +662,11 @@ footer{
 .seo-content ul{ margin:0 0 20px; padding-left:22px; }
 .seo-content li{ font-size:16.5px; line-height:1.75; color:var(--ink); margin-bottom:8px; }
 .seo-content .seo-disclaimer{ font-size:13px; color:var(--ink-soft); margin-top:32px; }
+.vela-related-list{ list-style:none; padding:0; margin:14px 0 0; display:flex; flex-direction:column; gap:10px; }
+.vela-related-list a{
+  color:var(--acento); font-weight:700; text-decoration:none; font-size:15px;
+}
+.vela-related-list a:hover{ text-decoration:underline; }
 
 .faq-item{
   border-bottom:1px solid var(--line); padding:18px 0;
