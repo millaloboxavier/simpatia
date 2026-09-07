@@ -327,10 +327,10 @@ export default function VelaPage() {
               {loading ? (
                 <div className="empty-shelf">Carregando...</div>
               ) : userId === null ? (
-                <div className="vela-candle vela-branca note-example">
+                <div className="vela-item note-example">
                   <span className="note-example-tag">Exemplo</span>
                   <div className="vela-mini-stage">
-                    <div className="vela-candle-big vela-mini-big">
+                    <div className="vela-candle-big vela-mini-big vela-branca">
                       <div className="vela-wick-zone">
                         <div className="vela-flame-big vela-mini-flame"></div>
                       </div>
@@ -346,14 +346,14 @@ export default function VelaPage() {
                   return (
                     <div
                       key={p.id}
-                      className={`vela-candle ${p.color}`}
+                      className="vela-item"
                       onClick={() => {
                         setDetailId(p.id);
                         trackEvent("ritual_open_saved", { ritual_type: "vela" });
                       }}
                     >
                       <div className="vela-mini-stage">
-                        <div className="vela-candle-big vela-mini-big">
+                        <div className={`vela-candle-big vela-mini-big ${p.color}`}>
                           <div className="vela-wick-zone">
                             <div className="vela-flame-big vela-mini-flame"></div>
                           </div>

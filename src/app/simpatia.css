@@ -313,28 +313,22 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .vela-cursor{ display:inline-block; margin-left:2px; color:var(--acento); animation:velaBlink 1s step-end infinite; }
 @keyframes velaBlink{ 50%{ opacity:0; } }
 
-/* Vela: cartão da vela na prateleira */
+/* Vela: item da vela na prateleira (sem card, só a vela sobre o altar) */
 .vela-shelf{ align-content:flex-start; }
-.vela-candle{
-  width:150px; min-height:120px; border-radius:12px; padding:14px;
-  display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px;
-  cursor:pointer; box-shadow:0 8px 16px rgba(0,0,0,0.22); position:relative;
-  transition:transform 0.18s ease;
+.vela-item{
+  width:150px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px;
+  cursor:pointer; padding:12px 10px; border-radius:12px; position:relative;
+  transition:transform 0.18s ease, background 0.15s ease;
 }
-.vela-candle:hover{ transform:translateY(-3px); }
-.vela-flame{ font-size:22px; }
-.vela-txt{
-  font-family:'Caveat',cursive; font-size:15.5px; line-height:1.25; color:#3d3110;
+.vela-item:hover{ transform:translateY(-3px); background:rgba(255,255,255,0.06); }
+.vela-item .vela-txt{
+  font-family:'Caveat',cursive; font-size:15.5px; line-height:1.25; color:var(--creme-desejo);
   display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
 }
-.vela-remaining{
+.vela-item .vela-remaining{
   font-family:'Sora',sans-serif; font-size:10.5px; font-weight:700; color:var(--ink-soft);
-  background:rgba(255,255,255,0.6); padding:2px 8px; border-radius:100px;
+  background:rgba(255,255,255,0.75); padding:2px 8px; border-radius:100px;
 }
-.vela-candle.vela-branca{ background:var(--branco-estrela); }
-.vela-candle.vela-verde{ background:var(--verde-sorte); }
-.vela-candle.vela-rosa{ background:var(--creme-desejo); }
-.vela-candle.vela-roxa{ background:var(--lilas-misterio); }
 
 /* Vela: detalhe no modal */
 .detail-note-preview.vela-detail.vela-branca{ background:var(--branco-estrela); }
@@ -419,7 +413,6 @@ nav.links button.active, nav.links a.navbtn.active{background:var(--deep-teal); 
 .vela-mini-stage{ display:flex; justify-content:center; height:22px; margin-bottom:2px; }
 .vela-candle-big.vela-mini-big{
   width:10px; height:26px; border-radius:3px 3px 2px 2px;
-  background:linear-gradient(180deg, #fff, var(--branco-estrela)) !important;
 }
 .vela-candle-big.vela-mini-big::before{ top:-4px; height:5px; }
 .vela-mini-big .vela-wick-zone{ top:-15px; width:20px; height:20px; }
