@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import type { Post } from "@/lib/blog";
+import { SITE_URL } from "@/lib/brand";
 
 export const metadata = {
   title: "Blog — Simpatia",
   description: "Textos sobre simpatias, rituais populares e o universo místico brasileiro.",
+  alternates: { canonical: `${SITE_URL}/blog` },
 };
 
 export default async function BlogPage() {

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Post } from "@/lib/blog";
-
-const BASE_URL = "https://simpatia.me";
+import { SITE_URL as BASE_URL } from "@/lib/brand";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -10,6 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/congelador`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/simpatias/conquistar`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/simpatias/atrair`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/simpatias/vela`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   ];
 

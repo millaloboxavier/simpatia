@@ -3,9 +3,8 @@ import Script from "next/script";
 import "./simpatia.css";
 import Nav from "@/components/Nav";
 import Toaster from "@/components/Toaster";
-import { LOGO_URL } from "@/lib/brand";
+import { LOGO_URL, SITE_URL } from "@/lib/brand";
 
-const SITE_URL = "https://simpatia.me";
 const GA_MEASUREMENT_ID = "G-H151JBDKRN";
 const FAVICON_URL =
   "https://kybevdzcpplztwyozsqi.supabase.co/storage/v1/object/public/Site%20Assets/favicon.png";
@@ -20,6 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Simpatia",
   },
   description: DESCRIPTION,
+  alternates: { canonical: SITE_URL },
   icons: {
     icon: FAVICON_URL,
     shortcut: FAVICON_URL,
@@ -54,6 +54,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Simpatia",
+              url: SITE_URL,
+              description: DESCRIPTION,
+            }),
+          }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

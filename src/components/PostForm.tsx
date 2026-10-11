@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { slugify } from "@/lib/slugify";
 import { showToast } from "@/lib/toast";
-import type { Post } from "@/lib/blog";
+import type { Post, FaqItem } from "@/lib/blog";
 import RichTextEditor from "./RichTextEditor";
 
 export default function PostForm({
@@ -26,8 +26,21 @@ export default function PostForm({
   const [coverImageUrl, setCoverImageUrl] = useState(post?.cover_image_url ?? "");
   const [seoTitle, setSeoTitle] = useState(post?.seo_title ?? "");
   const [seoDescription, setSeoDescription] = useState(post?.seo_description ?? "");
+  const [faq, setFaq] = useState<FaqItem[]>(post?.faq ?? []);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  function addFaqItem() {
+    setFaq((prev) => [...prev, { question: "", answer: "" }]);
+  }
+
+  function updateFaqItem(index: number, field: "question" | "answer", value: string) {
+    setFaq((prev) => prev.map((item, i) => (i === index ? { ...item, [field]: value } : item)));
+  }
+
+  function removeFaqItem(index: number) {
+    setFaq((prev) => prev.filter((_, i) => i !== index));
+  }
 
   function handleTitleChange(value: string) {
     setTitle(value);
@@ -45,6 +58,10 @@ export default function PostForm({
 
     setSaving(true);
 
+    const cleanFaq = faq
+      .map((item) => ({ question: item.question.trim(), answer: item.answer.trim() }))
+      .filter((item) => item.question && item.answer);
+
     const payload = {
       title: title.trim(),
       slug: slugify(slug),
@@ -53,6 +70,7 @@ export default function PostForm({
       cover_image_url: coverImageUrl.trim() || null,
       seo_title: seoTitle.trim() || null,
       seo_description: seoDescription.trim() || null,
+      faq: cleanFaq.length > 0 ? cleanFaq : null,
       updated_at: new Date().toISOString(),
     };
 
@@ -162,6 +180,48 @@ export default function PostForm({
             placeholder="O textinho que aparece embaixo do título no resultado de busca"
           />
         </div>
+      </fieldset>
+
+      <fieldset className="admin-fieldset">
+        <legend>FAQ do artigo (opcional)</legend>
+        <div className="hint-text" style={{ marginBottom: 14 }}>
+          Perguntas e respostas que aparecem no fim do post e ajudam no Google. Deixe vazio se
+          esse artigo não precisar de FAQ.
+        </div>
+        {faq.map((item, index) => (
+          <div key={index} className="admin-faq-item">
+            <div style={{ marginBottom: 8 }}>
+              <label htmlFor={`faq-q-${index}`}>Pergunta {index + 1}</label>
+              <input
+                id={`faq-q-${index}`}
+                type="text"
+                value={item.question}
+                onChange={(e) => updateFaqItem(index, "question", e.target.value)}
+                placeholder="Ex: Simpatia realmente funciona?"
+              />
+            </div>
+            <div>
+              <label htmlFor={`faq-a-${index}`}>Resposta {index + 1}</label>
+              <textarea
+                id={`faq-a-${index}`}
+                value={item.answer}
+                onChange={(e) => updateFaqItem(index, "answer", e.target.value)}
+                placeholder="Escreva a resposta"
+              />
+            </div>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              style={{ marginTop: 8 }}
+              onClick={() => removeFaqItem(index)}
+            >
+              Remover pergunta
+            </button>
+          </div>
+        ))}
+        <button type="button" className="btn btn-ghost" onClick={addFaqItem}>
+          + Adicionar pergunta
+        </button>
       </fieldset>
 
       <div className="modal-actions" style={{ margin: 0 }}>

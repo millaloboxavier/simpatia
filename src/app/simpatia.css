@@ -929,6 +929,9 @@ header.nav.nav-v2{
   border:1px solid var(--line); border-radius:14px; padding:18px 20px; background:var(--paper);
 }
 .admin-fieldset legend{ font-size:13px; font-weight:700; color:var(--ink-soft); padding:0 6px; }
+.admin-faq-item{
+  border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:14px; background:#fff;
+}
 
 .rte{ border:1.5px solid var(--line); border-radius:12px; overflow:hidden; background:#fff; }
 .rte-toolbar{ display:flex; gap:6px; padding:8px; border-bottom:1px solid var(--line); background:var(--frost-bg); flex-wrap:wrap; }
