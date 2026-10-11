@@ -12,11 +12,16 @@ type Pedido = {
   text: string;
   status: "ativo" | "finalizado";
   color: string;
+  burn_hours: number;
   created_at: string;
   finalized_at: string | null;
 };
 
-const BURN_HOURS = 24;
+const DURATIONS = [
+  { hours: 24, label: "1 dia" },
+  { hours: 72, label: "3 dias" },
+  { hours: 168, label: "7 dias" },
+];
 
 const HERO_PHRASES = [
   "pedir uma forcinha no amor",
@@ -106,14 +111,24 @@ function useTypewriter(phrases: string[]) {
 
 function statusOf(p: Pedido) {
   if (p.status === "finalizado") return "apagada" as const;
-  const remaining = hoursRemaining(p.created_at, BURN_HOURS);
+  const remaining = hoursRemaining(p.created_at, p.burn_hours);
   return remaining > 0 ? ("acesa" as const) : ("apagada" as const);
 }
 
 function formatRemaining(hours: number) {
   if (hours <= 0) return "apagou agora";
   if (hours < 1) return `${Math.ceil(hours * 60)} min restantes`;
-  return `${Math.ceil(hours)}h restantes`;
+  if (hours < 24) return `${Math.ceil(hours)}h restantes`;
+  const days = Math.ceil(hours / 24);
+  return `${days} dia${days === 1 ? "" : "s"} restante${days === 1 ? "" : "s"}`;
+}
+
+function formatDuration(hours: number) {
+  const match = DURATIONS.find((d) => d.hours === hours);
+  if (match) return match.label;
+  if (hours < 24) return `${hours}h`;
+  const days = Math.round(hours / 24);
+  return `${days} dia${days === 1 ? "" : "s"}`;
 }
 
 export default function VelaPage() {
@@ -127,6 +142,7 @@ export default function VelaPage() {
   const [pedidoText, setPedidoText] = useState("");
   const [placeholder, setPlaceholder] = useState(CATEGORIES[0].placeholder);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedDuration, setSelectedDuration] = useState<number | null>(null);
   const [lit, setLit] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -171,9 +187,9 @@ export default function VelaPage() {
     };
   }, [supabase, userId]);
 
-  // Apaga automaticamente (no banco) velas que já passaram das 24h.
+  // Apaga automaticamente (no banco) velas que já passaram da duração escolhida.
   useEffect(() => {
-    const expired = pedidos.filter((p) => p.status === "ativo" && hoursRemaining(p.created_at, BURN_HOURS) <= 0);
+    const expired = pedidos.filter((p) => p.status === "ativo" && hoursRemaining(p.created_at, p.burn_hours) <= 0);
     if (expired.length === 0) return;
     const finalizedAt = new Date().toISOString();
     expired.forEach(async (p) => {
@@ -193,6 +209,7 @@ export default function VelaPage() {
     setWizardStep(0);
     setPedidoText("");
     setSelectedColor(null);
+    setSelectedDuration(null);
     setLit(false);
     setWizardOpen(true);
     trackEvent("ritual_start", { ritual_type: "vela" });
@@ -212,8 +229,13 @@ export default function VelaPage() {
     setWizardStep(3);
   }
 
+  function pickDuration(hours: number) {
+    setSelectedDuration(hours);
+    setWizardStep(4);
+  }
+
   async function handleLight() {
-    if (!userId || !selectedColor || saving) return;
+    if (!userId || !selectedColor || !selectedDuration || saving) return;
     const text = pedidoText.trim();
     if (!text) {
       showToast("Escreva seu pedido antes de acender.");
@@ -229,6 +251,7 @@ export default function VelaPage() {
         text,
         ritual_type: "vela",
         color: `vela-${selectedColor}`,
+        burn_hours: selectedDuration,
         rotation: 0,
       })
       .select()
@@ -241,7 +264,7 @@ export default function VelaPage() {
     setPedidos((prev) => [data as Pedido, ...prev]);
     setLit(true);
     trackEvent("ritual_complete", { ritual_type: "vela" });
-    setTimeout(() => setWizardStep(4), 1400);
+    setTimeout(() => setWizardStep(5), 1400);
   }
 
   return (
@@ -266,7 +289,7 @@ export default function VelaPage() {
                 name: "Por quanto tempo a vela fica acesa?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Simbolicamente, por 24 horas. Depois disso ela aparece apagada no seu histórico, mas o pedido continua guardado na sua conta.",
+                  text: "Você escolhe: 1, 3 ou 7 dias. Depois desse prazo ela aparece apagada no seu histórico, mas o pedido continua guardado na sua conta.",
                 },
               },
               {
@@ -352,7 +375,7 @@ export default function VelaPage() {
                 <div className="empty-shelf">Nenhuma vela acesa agora. Acenda a primeira pra começar.</div>
               ) : (
                 ativas.map((p) => {
-                  const remaining = hoursRemaining(p.created_at, BURN_HOURS);
+                  const remaining = hoursRemaining(p.created_at, p.burn_hours);
                   return (
                     <div
                       key={p.id}
@@ -438,11 +461,12 @@ export default function VelaPage() {
           <li>Escolha uma intenção ou escreva a sua do seu jeito.</li>
           <li>Escreva seu pedido.</li>
           <li>Escolha a cor da vela.</li>
+          <li>Escolha por quanto tempo ela fica acesa: 1, 3 ou 7 dias.</li>
           <li>Leve o fósforo até o pavio para acender.</li>
         </ul>
         <p>
-          Sua vela fica simbolicamente acesa por 24 horas, guardada na sua conta. Depois desse
-          tempo, ela aparece apagada no seu histórico — mas o pedido continua lá.
+          Sua vela fica simbolicamente acesa pelo tempo que você escolher, guardada na sua conta.
+          Depois desse prazo, ela aparece apagada no seu histórico — mas o pedido continua lá.
         </p>
 
         <h2>Dúvidas sobre a vela virtual</h2>
@@ -462,8 +486,8 @@ export default function VelaPage() {
             <h3>Por quanto tempo a vela fica acesa?</h3>
           </summary>
           <p>
-            Simbolicamente, por 24 horas. Depois disso ela aparece apagada no seu histórico, mas o
-            pedido continua guardado na sua conta.
+            Você escolhe: 1, 3 ou 7 dias. Depois desse prazo ela aparece apagada no seu
+            histórico, mas o pedido continua guardado na sua conta.
           </p>
         </details>
 
@@ -512,9 +536,9 @@ export default function VelaPage() {
             <div className={`detail-note-preview vela-detail ${detail.color}`}>{detail.text}</div>
             <div className="detail-days">
               {statusOf(detail) === "apagada" ? (
-                <>Essa vela queimou por 24 horas e já se apagou. ✨</>
+                <>Essa vela queimou por {formatDuration(detail.burn_hours)} e já se apagou. ✨</>
               ) : (
-                <>Acesa — {formatRemaining(hoursRemaining(detail.created_at, BURN_HOURS))}.</>
+                <>Acesa — {formatRemaining(hoursRemaining(detail.created_at, detail.burn_hours))}.</>
               )}
             </div>
             <div className="modal-actions">
@@ -602,17 +626,36 @@ export default function VelaPage() {
               </>
             )}
 
-            {wizardStep === 3 && selectedColor && (
+            {wizardStep === 3 && (
+              <>
+                <h3>Por quanto tempo?</h3>
+                <p className="desc">Escolha há quanto tempo sua vela vai ficar simbolicamente acesa.</p>
+                <div className="vela-duration-grid">
+                  {DURATIONS.map((d) => (
+                    <button key={d.hours} className="vela-duration-card" onClick={() => pickDuration(d.hours)}>
+                      {d.label}
+                    </button>
+                  ))}
+                </div>
+                <div className="modal-actions">
+                  <button className="btn btn-ghost" onClick={() => setWizardStep(2)} style={{ flex: 1 }}>
+                    Voltar
+                  </button>
+                </div>
+              </>
+            )}
+
+            {wizardStep === 4 && selectedColor && (
               <LightStage
                 colorKey={selectedColor}
                 lit={lit}
                 saving={saving}
                 onLight={handleLight}
-                onBack={() => setWizardStep(2)}
+                onBack={() => setWizardStep(3)}
               />
             )}
 
-            {wizardStep === 4 && (
+            {wizardStep === 5 && (
               <>
                 <div className="celebrate-icon">🕯️</div>
                 <h3 style={{ textAlign: "center" }}>Pronto. Ela está acesa.</h3>
@@ -621,7 +664,7 @@ export default function VelaPage() {
                   ou com quem estiver de plantão.
                 </p>
                 <p className="desc" style={{ textAlign: "center", fontWeight: 700 }}>
-                  Sua vela ficará acesa por 24 horas.
+                  Sua vela ficará acesa por {selectedDuration ? formatDuration(selectedDuration) : "um tempo"}.
                 </p>
                 <div className="modal-actions">
                   <button className="btn btn-primary" onClick={closeWizard} style={{ flex: 1 }}>
